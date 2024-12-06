@@ -8,4 +8,22 @@ updates:
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
-      interval: "weekly"
+      interval: "daily"
+    ignore:
+      - dependency-name: "vue"
+        versions: ["3.x"]
+      - dependency-name: "vue-template-compiler"
+        versions: ["3.x"]
+      - dependency-name: "vue-router"
+        versions: ["4.x"]
+      - dependency-name: "eslint-plugin-vue"
+        versions: ["9.x"]
+    allow:
+      - dependency-name: "vue"
+        versions: ["2.7.x"]
+      - dependency-name: "vue-template-compiler"
+        versions: ["2.7.x"]
+      - dependency-name: "vue-router"
+        versions: ["3.5.x"]
+      - dependency-name: "eslint-plugin-vue"
+        versions: ["6.2.x"]
