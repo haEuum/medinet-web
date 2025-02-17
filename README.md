@@ -1,26 +1,50 @@
-# Commit Message Convention
+# React + TypeScript + Vite
 
-프로젝트에서 사용되는 커밋 메시지의 유형과 그 설명은 다음과 같습니다:
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-| Type             | Description                                                                 |
-|------------------|-----------------------------------------------------------------------------|
-| **Feat**         | 새로운 기능을 추가                                                         |
-| **Fix**          | 버그 수정                                                                  |
-| **Design**       | CSS 등 사용자 UI 디자인 변경                                               |
-| **!BREAKING CHANGE** | 커다란 API 변경                                                         |
-| **!HOTFIX**      | 급하게 치명적인 버그를 고쳐야 하는 경우                                    |
-| **Style**        | 코드 포맷 변경, 세미콜론 누락 등 코드 수정이 없는 경우                     |
-| **Refactor**     | 프로덕션 코드 리팩토링                                                    |
-| **Comment**      | 필요한 주석 추가 및 변경                                                  |
-| **Docs**         | 문서 수정                                                                  |
-| **Test**         | 테스트 코드 추가 또는 리팩토링 (Production Code 변경 없음)                |
-| **Chore**        | 빌드 업무 수정, 패키지 매니저 구성 등 (Production Code 변경 없음)         |
-| **Rename**       | 파일 혹은 폴더명을 수정하거나 이동하는 작업                                |
-| **Remove**       | 파일을 삭제하는 작업                                                      |
+Currently, two official plugins are available:
 
-## Commit Example
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-```bash
-git commit -m "Feat :: Add user authentication feature"
-git commit -m "Fix :: Correct typo in login function"
-git commit -m "Docs :: Update README with new API usage"
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+
+- Configure the top-level `parserOptions` property like this:
+
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
+
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
+
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
+```
