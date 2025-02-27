@@ -1,4 +1,4 @@
 export interface CodeCertified {
-    condeCertified: boolean;
+    isCodeCertified: boolean;
     setIsCodeCertified: (isCodeCertified: boolean) => void;
 }
