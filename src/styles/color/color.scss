@@ -1,9 +1,9 @@
-$local-variables: (
+$Pallete: (
     Common: (
-        "00": #FFFFFF,
-        "100": #000000,   
+        '00': #FFFFFF,
+        '100': #000000,
     ),
-    Neutral: (
+    Netural: (
         '99': #FCFCFD,
         '97': #F6F6F7,
         '95': #F2F2F3,
@@ -87,7 +87,7 @@ $local-variables: (
         '10': #332900,
     ),
     Purple: (
-        '99': #ECFAFF,
+        '99': #FCFAFF,
         '95': #F1E6FE,
         '90': #E3CDFE,
         '80': #C79CFC,
@@ -98,5 +98,47 @@ $local-variables: (
         '30': #450495,
         '20': #2E0363,
         '10': #170132,
+    ),
+);
+
+$Sementic: (
+    Primary: (
+        Normal: map-get($Pallete, Blue)['20'],
+        AlterNative: map-get($Pallete, Blue)['30'],
+        Assistive: map-get($Pallete, Blue)['50'],
+    ),
+    Secondary: (
+        Normal: #BFC1C1,
+        AlterNative: #D1D4D5,
+        Assistive: #ECF0F1,
+    ),
+    Label: (
+        Normal: map-get($Pallete, Netural)['5'],
+        Strong: map-get($Pallete, Common)['100'],
+        Netural: map-get($Pallete, Netural)['25'],
+        AlterNative: map-get($Pallete, Netural)['40'],
+        Assistive: map-get($Pallete, Netural)['50'],
+        Disabled: map-get($Pallete, Netural)['97'],
+    ),
+    Line: (
+        Normal: map-get($Pallete, Netural)['90'],
+        Netural: map-get($Pallete, Netural)['95'],
+        AlterNative: map-get($Pallete, Netural)['97'],
+    ),
+    Fill: (
+        Assistive: map-get($Pallete, Common)['00'],
+        Support: map-get($Pallete, Common)['00'],
+        Normal: map-get($Pallete, Netural)['97'],
+        Netural: map-get($Pallete, Netural)['95'],
+        AlterNative: map-get($Pallete, Netural)['90'],
+    ),
+    Normal: (
+        Normal: map-get($Pallete, Common)['00'],
+        AlterNative: map-get($Pallete, Netural)['99'],
+        Netural: map-get($Pallete, Netural)['95'],
+    ),
+    Static: (
+        Black: map-get($Pallete, Common)['100'],
+        White: map-get($Pallete, Common)['00'],
     ),
 );
