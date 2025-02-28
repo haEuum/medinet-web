@@ -1,26 +1,26 @@
-$black-shadows: (
-  "1": (
-    color: rgba(0, 0, 0, 0.02),
-    offset-x: 0,
-    offset-y: 3px,
-    opacity: 0.1,
-    radius: 10px,
-    elevation: 3
-  ),
-  "2": (
-    color: rgba(0, 0, 0, 0.04),
-    offset-x: 0,
-    offset-y: 4px,
-    opacity: 0.12,
-    radius: 12px,
-    elevation: 4
-  ),
-  "3": (
-    color: rgba(0, 0, 0, 0.06),
-    offset-x: 0,
-    offset-y: 6px,
-    opacity: 0.15,
-    radius: 18px,
-    elevation: 6
-  )
+$black-shadows-1: (
+  color: rgba(0, 0, 0, 0.02),
+  offset-x: 0,
+  offset-y: 3px,
+  opacity: 0.1,
+  radius: 10px,
+  elevation: 3
+);
+
+$black-shadows-2: (
+  color: rgba(0, 0, 0, 0.04),
+  offset-x: 0,
+  offset-y: 4px,
+  opacity: 0.12,
+  radius: 12px,
+  elevation: 4
+);
+
+$black-shadows-3: (
+  color: rgba(0, 0, 0, 0.06),
+  offset-x: 0,
+  offset-y: 6px,
+  opacity: 0.15,
+  radius: 18px,
+  elevation: 6
 );
