@@ -1,47 +1,68 @@
+@font-face {
+  font-family: Pretendard-Regular;
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format(woff);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Pretendard-Medium;
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format(woff);
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Pretendard-Bold;
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format(woff);
+  font-weight: 700;
+  font-style: normal;
+}
+
 $typography: (
   Display1: (
-    Bold: (fontSize: 36, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 46.8, letterSpacing: 0),
-    Medium: (fontSize: 36, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 46.8, letterSpacing: 0),
-    Regular: (fontSize: 36, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 46.8, letterSpacing: 0),
+    Bold: (fontSize: 36, fontWeight: 700, fontFamily: Pretendard-Bold, lineHeight: 46.8, letterSpacing: 0),
+    Medium: (fontSize: 36, fontWeight: 500, fontFamily: Pretendard-Medium, lineHeight: 46.8, letterSpacing: 0),
+    Regular: (fontSize: 36, fontWeight: 400, fontFamily: Pretendard-Regular, lineHeight: 46.8, letterSpacing: 0),
   ),
   Display2: (
-    Bold: (fontSize: 32, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 41.6, letterSpacing: 0),
-    Medium: (fontSize: 32, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 41.6, letterSpacing: 0),
-    Regular: (fontSize: 32, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 41.6, letterSpacing: 0),
+    Bold: (fontSize: 32, fontWeight: 700, fontFamily: Pretendard-Bold, lineHeight: 41.6, letterSpacing: 0),
+    Medium: (fontSize: 32, fontWeight: 500, fontFamily: Pretendard-Medium, lineHeight: 41.6, letterSpacing: 0),
+    Regular: (fontSize: 32, fontWeight: 400, fontFamily: Pretendard-Regular, lineHeight: 41.6, letterSpacing: 0),
   ),
   Title1: (
-    Bold: (fontSize: 28, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 36.4, letterSpacing: 0),
-    Medium: (fontSize: 28, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 36.4, letterSpacing: 0),
-    Regular: (fontSize: 28, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 36.4, letterSpacing: 0),
+    Bold: (fontSize: 28, fontWeight: 700, fontFamily: Pretendard-Bold, lineHeight: 36.4, letterSpacing: 0),
+    Medium: (fontSize: 28, fontWeight: 500, fontFamily: Pretendard-Medium, lineHeight: 36.4, letterSpacing: 0),
+    Regular: (fontSize: 28, fontWeight: 400, fontFamily: Pretendard-Regular, lineHeight: 36.4, letterSpacing: 0),
   ),
   Title2: (
-    Bold: (fontSize: 24, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 31.2, letterSpacing: 0),
-    Medium: (fontSize: 24, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 31.2, letterSpacing: 0),
-    Regular: (fontSize: 24, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 31.2, letterSpacing: 0),
+    Bold: (fontSize: 24, fontWeight: 700, fontFamily: Pretendard-Bold, lineHeight: 31.2, letterSpacing: 0),
+    Medium: (fontSize: 24, fontWeight: 500, fontFamily: Pretendard-Medium, lineHeight: 31.2, letterSpacing: 0),
+    Regular: (fontSize: 24, fontWeight: 400, fontFamily: Pretendard-Regular, lineHeight: 31.2, letterSpacing: 0),
   ),
   HeadLine1: (
-    Bold: (fontSize: 20, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 26, letterSpacing: 0),
-    Medium: (fontSize: 20, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 26, letterSpacing: 0),
-    Regular: (fontSize: 20, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 26, letterSpacing: 0),
+    Bold: (fontSize: 20, fontWeight: 700, fontFamily: Pretendard-Bold, lineHeight: 26, letterSpacing: 0),
+    Medium: (fontSize: 20, fontWeight: 500, fontFamily: Pretendard-Medium, lineHeight: 26, letterSpacing: 0),
+    Regular: (fontSize: 20, fontWeight: 400, fontFamily: Pretendard-Regular, lineHeight: 26, letterSpacing: 0),
   ),
   HeadLine2: (
-    Bold: (fontSize: 18, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 23.4, letterSpacing: 0),
-    Medium: (fontSize: 18, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 23.4, letterSpacing: 0),
-    Regular: (fontSize: 18, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 23.4, letterSpacing: 0),
+    Bold: (fontSize: 18, fontWeight: 700, fontFamily: Pretendard-Bold, lineHeight: 23.4, letterSpacing: 0),
+    Medium: (fontSize: 18, fontWeight: 500, fontFamily: Pretendard-Medium, lineHeight: 23.4, letterSpacing: 0),
+    Regular: (fontSize: 18, fontWeight: 400, fontFamily: Pretendard-Regular, lineHeight: 23.4, letterSpacing: 0),
   ),
   Body: (
-    Bold: (fontSize: 16, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 20.8, letterSpacing: 0),
-    Medium: (fontSize: 16, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 20.8, letterSpacing: 0),
-    Regular: (fontSize: 16, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 20.8, letterSpacing: 0),
+    Bold: (fontSize: 16, fontWeight: 700, fontFamily: Pretendard-Bold, lineHeight: 20.8, letterSpacing: 0),
+    Medium: (fontSize: 16, fontWeight: 500, fontFamily: Pretendard-Medium, lineHeight: 20.8, letterSpacing: 0),
+    Regular: (fontSize: 16, fontWeight: 400, fontFamily: Pretendard-Regular, lineHeight: 20.8, letterSpacing: 0),
   ),
   Label: (
-    Bold: (fontSize: 14, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 18.2, letterSpacing: 0),
-    Medium: (fontSize: 14, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 18.2, letterSpacing: 0),
-    Regular: (fontSize: 14, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 18.2, letterSpacing: 0),
+    Bold: (fontSize: 14, fontWeight: 700, fontFamily: Pretendard-Bold, lineHeight: 18.2, letterSpacing: 0),
+    Medium: (fontSize: 14, fontWeight: 500, fontFamily: Pretendard-Medium, lineHeight: 18.2, letterSpacing: 0),
+    Regular: (fontSize: 14, fontWeight: 400, fontFamily: Pretendard-Regular, lineHeight: 18.2, letterSpacing: 0),
   ),
   Caption: (
-    Bold: (fontSize: 12, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 15.6, letterSpacing: 0),
-    Medium: (fontSize: 12, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 15.6, letterSpacing: 0),
-    Regular: (fontSize: 12, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 15.6, letterSpacing: 0),
+    Bold: (fontSize: 12, fontWeight: 700, fontFamily: Pretendard-Bold, lineHeight: 15.6, letterSpacing: 0),
+    Medium: (fontSize: 12, fontWeight: 500, fontFamily: Pretendard-Medium, lineHeight: 15.6, letterSpacing: 0),
+    Regular: (fontSize: 12, fontWeight: 400, fontFamily: Pretendard-Regular, lineHeight: 15.6, letterSpacing: 0),
   ),
 );
