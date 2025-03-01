@@ -1,26 +1,5 @@
-$black-shadows-1: (
-  color: rgba(0, 0, 0, 0.02),
-  offset-x: 0,
-  offset-y: 3px,
-  opacity: 0.1,
-  radius: 10px,
-  elevation: 3
-);
-
-$black-shadows-2: (
-  color: rgba(0, 0, 0, 0.04),
-  offset-x: 0,
-  offset-y: 4px,
-  opacity: 0.12,
-  radius: 12px,
-  elevation: 4
-);
-
-$black-shadows-3: (
-  color: rgba(0, 0, 0, 0.06),
-  offset-x: 0,
-  offset-y: 6px,
-  opacity: 0.15,
-  radius: 18px,
-  elevation: 6
-);
+:root {
+  --black-shadow-1: rgba(0, 0, 0, 0.02) 0 3px 10px 0.1 3;
+  --black-shadow-2: rgba(0, 0, 0, 0.04) 0 4px 12px 0.12 4;
+  --black-shadow-3: rgba(0, 0, 0, 0.06) 0 6px 18px 0.15 6;
+}
