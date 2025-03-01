@@ -1,5 +1,7 @@
-$shape-extra-large: 20px;
-$shape-large: 16px;
-$shape-medium: 14px;
-$shape-small: 12px;
-$shape-extra-small: 10px;
+$Shape: (
+    extra-large: 20px,
+    large: 16px,
+    medium: 14px,
+    small: 12px,
+    extra-small: 10px
+);
