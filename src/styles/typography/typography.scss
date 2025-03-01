@@ -1,215 +1,47 @@
-.display1-bold {
-    font-size: 36px;
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    line-height: 46.8px;
-    letter-spacing: 0;
-  };
-  
-  .display1-medium {
-    font-size: 36px;
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    line-height: 46.8px;
-    letter-spacing: 0;
-  };
-  
-  .display1-regular {
-    font-size: 36px;
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    line-height: 46.8px;
-    letter-spacing: 0;
-  };
-  
-  .display2-bold {
-    font-size: 32px;
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    line-height: 46.8px;
-    letter-spacing: 0;
-  };
-  
-  .display2-medium {
-    font-size: 32px;
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    line-height: 46.8px;
-    letter-spacing: 0;
-  };
-  
-  .display2-regular {
-    font-size: 32px;
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    line-height: 46.8px;
-    letter-spacing: 0;
-  };
-  
-  .title1-bold {
-    font-size: 28px;
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    line-height: 36.4px;
-    letter-spacing: 0;
-  };
-  
-  .title1-medium {
-    font-size: 28px;
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    line-height: 36.4px;
-    letter-spacing: 0;
-  };
-  
-  .title1-regular {
-    font-size: 28px;
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    line-height: 36.4px;
-    letter-spacing: 0;
-  };
-  
-  .title2-bold {
-    font-size: 24px;
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    line-height: 36.4px;
-    letter-spacing: 0;
-  };
-  
-  .title2-medium {
-    font-size: 24px;
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    line-height: 36.4px;
-    letter-spacing: 0;
-  };
-  
-  .title2-regular {
-    font-size: 24px;
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    line-height: 36.4px;
-    letter-spacing: 0;
-  };
-  
-  .headline1-bold {
-    font-size: 20px;
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    line-height: 26px;
-    letter-spacing: 0;
-  };
-  
-  .headline1-medium {
-    font-size: 20px;
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    line-height: 26px;
-    letter-spacing: 0;
-  };
-  
-  .headline1-regular {
-    font-size: 20px;
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    line-height: 26px;
-    letter-spacing: 0;
-  };
-  
-  .headline2-bold {
-    font-size: 18px;
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    line-height: 26px;
-    letter-spacing: 0;
-  };
-  
-  .headline2-medium {
-    font-size: 18px;
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    line-height: 26px;
-    letter-spacing: 0;
-  };
-  
-  .headline2-regular {
-    font-size: 18px;
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    line-height: 26px;
-    letter-spacing: 0;
-  };
-  
-  .body-bold {
-    font-size: 16px;
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    line-height: 20.8px;
-    letter-spacing: 0;
-  };
-  
-  .body-medium {
-    font-size: 16px;
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    line-height: 20.8px;
-    letter-spacing: 0;
-  };
-  
-  .body-regular {
-    font-size: 16px;
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    line-height: 20.8px;
-    letter-spacing: 0;
-  };
-  
-  .label-bold {
-    font-size: 14px;
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    line-height: 18.2px;
-    letter-spacing: 0;
-  };
-  
-  .label-medium {
-    font-size: 14px;
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    line-height: 18.2px;
-    letter-spacing: 0;
-  };
-  
-  .label-regular {
-    font-size: 14px;
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    line-height: 18.2px;
-    letter-spacing: 0;
-  };
-  
-  .caption-bold {
-    font-size: 12px;
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    line-height: 15.6px;
-    letter-spacing: 0;
-  };
-  
-  .caption-medium {
-    font-size: 12px;
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    line-height: 15.6px;
-    letter-spacing: 0;
-  };
-  
-  .caption-regular {
-    font-size: 12px;
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    line-height: 15.6px;
-    letter-spacing: 0;
-  };
+$typography: (
+  Display1: (
+    Bold: (fontSize: 36, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 46.8, letterSpacing: 0),
+    Medium: (fontSize: 36, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 46.8, letterSpacing: 0),
+    Regular: (fontSize: 36, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 46.8, letterSpacing: 0),
+  ),
+  Display2: (
+    Bold: (fontSize: 32, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 41.6, letterSpacing: 0),
+    Medium: (fontSize: 32, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 41.6, letterSpacing: 0),
+    Regular: (fontSize: 32, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 41.6, letterSpacing: 0),
+  ),
+  Title1: (
+    Bold: (fontSize: 28, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 36.4, letterSpacing: 0),
+    Medium: (fontSize: 28, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 36.4, letterSpacing: 0),
+    Regular: (fontSize: 28, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 36.4, letterSpacing: 0),
+  ),
+  Title2: (
+    Bold: (fontSize: 24, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 31.2, letterSpacing: 0),
+    Medium: (fontSize: 24, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 31.2, letterSpacing: 0),
+    Regular: (fontSize: 24, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 31.2, letterSpacing: 0),
+  ),
+  HeadLine1: (
+    Bold: (fontSize: 20, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 26, letterSpacing: 0),
+    Medium: (fontSize: 20, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 26, letterSpacing: 0),
+    Regular: (fontSize: 20, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 26, letterSpacing: 0),
+  ),
+  HeadLine2: (
+    Bold: (fontSize: 18, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 23.4, letterSpacing: 0),
+    Medium: (fontSize: 18, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 23.4, letterSpacing: 0),
+    Regular: (fontSize: 18, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 23.4, letterSpacing: 0),
+  ),
+  Body: (
+    Bold: (fontSize: 16, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 20.8, letterSpacing: 0),
+    Medium: (fontSize: 16, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 20.8, letterSpacing: 0),
+    Regular: (fontSize: 16, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 20.8, letterSpacing: 0),
+  ),
+  Label: (
+    Bold: (fontSize: 14, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 18.2, letterSpacing: 0),
+    Medium: (fontSize: 14, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 18.2, letterSpacing: 0),
+    Regular: (fontSize: 14, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 18.2, letterSpacing: 0),
+  ),
+  Caption: (
+    Bold: (fontSize: 12, fontWeight: '700', fontFamily: 'Pretendard-Bold', lineHeight: 15.6, letterSpacing: 0),
+    Medium: (fontSize: 12, fontWeight: '500', fontFamily: 'Pretendard-Medium', lineHeight: 15.6, letterSpacing: 0),
+    Regular: (fontSize: 12, fontWeight: '400', fontFamily: 'Pretendard-Regular', lineHeight: 15.6, letterSpacing: 0),
+  ),
+);
