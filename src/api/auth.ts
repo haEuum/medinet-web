@@ -10,6 +10,20 @@ export const login = async (loginData: LoginForm): Promise<LoginResponse> => {
         const { data } = await axios.post(`${SERVER_URL}/login`, loginData);
         return data;
     } catch (error) {
-        throw new Error("로그인 요청에 실패하였습니다.");
+        throw new Error("로그인 요청 실패");
     }
 };
+
+export const refresh = async (
+    refreshToken: { refeahToken: string | null }
+): Promise<newAccessTokenResponse> => {
+    try {
+        const { data } = await axios.post<newAccessTokenResponse>(
+            `${SERVER_URL}/reissue`,
+            refreshToken
+        );
+        return data;
+    } catch (error) {
+        throw new Error("리프레쉬 에러");
+    }
+}
