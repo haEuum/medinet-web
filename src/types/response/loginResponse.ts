@@ -1,5 +1,5 @@
-import { newAccessTokenResponse } from "./tokenResponse";
+import { tokenResponse } from "./tokenResponse";
 
-export interface LoginResponse extends newAccessTokenResponse {
+export interface LoginResponse extends tokenResponse {
   refreshToken: string;
 }

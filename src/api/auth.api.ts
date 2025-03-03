@@ -1,6 +1,6 @@
 import axios from "axios";
 import { LoginResponse } from "../types/response/loginResponse";
-import { newAccessTokenResponse } from "../types/response/tokenResponse";
+import { tokenResponse } from "../types/response/tokenResponse";
 import { LoginForm } from "../types/auth/loginForm";
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL || "";
@@ -16,9 +16,9 @@ export const login = async (loginData: LoginForm): Promise<LoginResponse> => {
 
 export const refresh = async (refreshToken: {
   refeahToken: string | null;
-}): Promise<newAccessTokenResponse> => {
+}): Promise<tokenResponse> => {
   try {
-    const { data } = await axios.post<newAccessTokenResponse>(
+    const { data } = await axios.post<tokenResponse>(
       `${SERVER_URL}/reissue`,
       refreshToken
     );
