@@ -14,16 +14,11 @@ export const login = async (loginData: LoginForm): Promise<LoginResponse> => {
   }
 };
 
-export const refresh = async (refreshToken: {
-  refeahToken: string | null;
-}): Promise<tokenResponse> => {
+export const refresh = async (refreshToken: string): Promise<tokenResponse> => {
   try {
-    const { data } = await axios.post<tokenResponse>(
-      `${SERVER_URL}/reissue`,
-      refreshToken
-    );
+    const { data } = await axios.post(`${SERVER_URL}/reissue`, refreshToken);
     return data;
   } catch (error) {
-    throw new Error("리프레쉬 에러");
+    throw new Error("엑세 토큰 재발급 실패");
   }
-};
+}
