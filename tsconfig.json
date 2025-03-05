@@ -21,8 +21,8 @@
     "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
-      "src/*": ["src/*"]
+      "@/*": ["src/*"]  // '@'를 src 폴더로 매핑
     }
   },
-  "include": ["src", "./@types"]
+  "include": ["src"]
 }
