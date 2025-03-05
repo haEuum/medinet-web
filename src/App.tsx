@@ -4,6 +4,7 @@ import Router from './components/router';
 const queryClient = new QueryClient();
 
 const App = () => {
+    console.log(import.meta.env.SERVER_URL);
     return (
         <QueryClientProvider client={queryClient}>
             <Router />
