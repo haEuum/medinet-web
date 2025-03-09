@@ -1,21 +1,13 @@
 import Cookies from "js-cookie";
 
-class Cookie {
-  public getCookie(key: string): string | undefined {
-    let item = undefined;
-    if (Cookies.get(key) !== undefined) {
-      item = Cookies.get(key);
-    }
-    return item;
-  }
+export const setCookie = (key: string, value: string) => {
+  return Cookies.set(key, value);
+};
 
-  public setCookie(key: string, value: string): void {
-    Cookies.set(key, value);
-  }
+export const getCookie = (key: string) => {
+  return Cookies.get(key);
+};
 
-  public removeCookie(key: string): void {
-    Cookies.remove(key);
-  }
-}
-
-export default new Cookie();
+export const removeCookie = (key: string) => {
+  return Cookies.remove(key);
+};

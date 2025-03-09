@@ -1,7 +1,7 @@
 import Provider from "src/provider";
 
 const App = () => {
-  return <Provider />;
+  return <Provider />
 };
 
 export default App;
