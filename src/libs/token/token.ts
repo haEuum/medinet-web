@@ -11,7 +11,8 @@ export const Token = {
     },
 
     removeToken: (key: string): void => {
-        Cookie.removeCookie(key);
+        Cookie.removeCookie(ACCESS_TOKEN);
+        Cookie.removeCookie(REFRESH_TOKEN);
     },
 };
 

@@ -12,6 +12,6 @@ export const requestInterceptor = (config: InternalAxiosRequestConfig) => {
         config.headers["Authorization"] = `Bearer ${accessToken}`;
         config.headers["Refresh-Token"] = `Bearer ${refreshToken}`;
     };
-
+    
     return config;
 };
