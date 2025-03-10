@@ -1,13 +1,17 @@
 import Cookies from "js-cookie";
 
-export const getCookie = (key: string): string | undefined => {
-    return Cookies.get(key);
+const Cookie = {
+    getCookie: (key: string): string | undefined => {
+      return Cookies.get(key);
+    },
+
+    setCookie: (key: string, value: string): void => {
+      Cookies.set(key, value);
+    },
+    
+    removeCookie: (key: string): void => {
+      Cookies.remove(key);
+    },
 };
 
-export const setCookie = (key: string, value: string): void => {
-    Cookies.set(key, value);
-};
-
-export const removeCookie = (key: string): void => {
-    Cookies.remove(key);
-};
+export default Cookie;

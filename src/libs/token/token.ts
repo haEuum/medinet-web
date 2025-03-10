@@ -1,15 +1,18 @@
-import { getCookie, setCookie, removeCookie } from "../cookie/cookie";
+import Cookie from "@/libs/cookie/cookie";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "@/constants/token/token";
 
-export const getToken = (key: string): string | undefined => {
-    return getCookie(key);
+export const Token = {
+    getToken: (key: string): string | undefined => {
+        return Cookie.getCookie(key);
+    },
+
+    setToken: (key: string, value: string): void => {
+        Cookie.setCookie(key, value);
+    },
+
+    removeToken: (key: string): void => {
+        Cookie.removeCookie(key);
+    },
 };
 
-export const setToken = (key: string, value: string): void => {
-    setCookie(key, value);
-};
-
-export const clearToken = () => {
-    removeCookie(ACCESS_TOKEN);
-    removeCookie(REFRESH_TOKEN);
-};
+export default Token;
