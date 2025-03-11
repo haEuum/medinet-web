@@ -16,14 +16,6 @@ const medinetAxios = axios.create({
     withCredentials: true,
 });
 
-let isRefreshing = false;
-let subscribers: ((token: string) => void)[] = [];
-
-const onRefreshed = (token: string) => {
-    subscribers.forEach((callback) => callback(token));
-    subscribers = [];
-};
-
 medinetAxios.interceptors.request.use(
     (config: CustomAxiosRequestConfig) => {
         return requestInterceptor(config);
