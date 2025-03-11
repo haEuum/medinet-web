@@ -33,3 +33,5 @@ medinetAxios.interceptors.response.use(
         return responseErrorInterceptor(error);
     },
 );
+
+export default medinetAxios;
