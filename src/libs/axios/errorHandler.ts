@@ -13,10 +13,10 @@ export const errorHandler = (error: AxiosError) => {
                 toast.error(`요청 오류: ${message}`);
                 break;
             case 401:
-                toast.error(`인증 오류: ${message}`);
+                alert("로그인이 필요합니다.");
                 break;
             case 403:
-                toast.error(`권한 오류: ${message}`);
+                alert("권한이 없습니다.");
                 break;
             case 404:
                 toast.error(`요청 오류: ${message}`);
