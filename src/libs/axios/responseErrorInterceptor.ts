@@ -21,6 +21,6 @@ const saveToken = (accessToken: string, refreshToken: string) => {
     Token.setToken(REFRESH_TOKEN, refreshToken);
 };
 
-export const responseErrorInterceptor = async (error: AxiosError) => {
+export const responseErrorInterceptor = (error: AxiosError) => {
 
 };
