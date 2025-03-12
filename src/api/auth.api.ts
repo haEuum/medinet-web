@@ -1,61 +1,22 @@
-import axios from 'axios';
-import { ACCESS_TOKEN, REFRESH_TOKEN } from '@/constants/token/token';
-import Token from '@/libs/token/token';
-import medinetAxios from '@/libs/axios/customAxios';
-import { LoginType } from '@/types/auth/auth.type';
-import { RegisterType } from '@/types/auth/auth.type';
+import {MedinetAxios} from "@/libs/axios/customAxios";
+import {Login, AuthResponse, NewAccessToken} from "@/types/auth/auth.type";
 
-const saveToken = (accessToken: string, refreshToken: string) => {
-    Token.setToken(ACCESS_TOKEN, accessToken);
-    Token.setToken(REFRESH_TOKEN, refreshToken);
+const SERVER_URL = process.env.VITE_SERVER_URL;
+
+export const login = async (login: Login):Promise<AuthResponse> => {
+    try {
+        const {data} = await MedinetAxios.post<AuthResponse>(`${SERVER_URL}/login`, login);
+        return data;
+    } catch (error) {
+        throw new Error("로그인 요청에 실패했습니다.")
+    }
 };
 
-export const login = async (LoginData: LoginType) => {
+export const refresh = async (refreshToken: {refreshToken: string | null}): Promise<NewAccessToken> => {
     try {
-        const response = await medinetAxios.post(`${process.env.SERVER_URL}/login`, LoginData);
-        const { accessToken, refreshToken } = response.data;
-
-        if (!accessToken || !refreshToken) {
-            throw new Error("토큰 정보가 잘못되었습니다.");
-        };
-
-        saveToken(accessToken, refreshToken);
-        return response.data;
+        const {data} = await MedinetAxios.post<NewAccessToken>(`${SERVER_URL}/reissue`, refreshToken);
+        return data;
     } catch (error) {
-        console.log("로그인 에러", error);
-        throw error;
-    };
-};
-
-export const Register = async (SignupData: RegisterType) => {
-    try {
-        const response = await medinetAxios.post(`${process.env.SERVER_URL}/signup`, SignupData);
-        return response.data;
-    } catch (error) {
-        console.log("회원가입 에러", error);
-        throw error;
-    };
-};
-
-export const refreshToken = async () => {
-    try {
-        const refreshToken = Token.getToken(REFRESH_TOKEN);
-
-        if (!refreshToken) {
-            throw new Error("리프레시 토큰이 없습니다.");
-        };
-
-        const response = await axios.post(`${process.env.SERVER_URL}/reissue`, { refreshToken });
-        const { accessToken, newRefreshToken } = response.data;
-
-        if (!accessToken || !newRefreshToken) {
-            throw new Error("새로운 토큰 발급에 실패하였습니다.");
-        };
-
-        saveToken(accessToken, newRefreshToken);
-        return accessToken;
-    } catch (error) {
-        console.log("리프레시 토큰 에러", error);
-        throw error;
-    };
+        throw new Error("리프레쉬 에러");
+    }
 };

@@ -1,24 +1,31 @@
-import axios, { AxiosError, InternalAxiosRequestConfig, AxiosResponse } from "axios";
-import { requestInterceptor } from "./requestInterceptor";
-import { responseErrorInterceptor } from "./responseErrorInterceptor";
+import axios, {AxiosRequestConfig} from "axios";
+import {requestInterceptor} from "@/libs/axios/requestInterceptor";
+import {responseErrorInterceptor} from "@/libs/axios/responseErrorInterceptor";
+import {REQUEST_TOKEN, ACCESS_TOKEN} from "@/constants/token/token.constants";
+import {Token} from "@/libs/token/session";
 
+// env에서 서버 주소를 VITE_SERVER_URL로 설정해야 합니다.
+const SERVER_URL = process.env.VITE_SERVER_URL;
 
-const medinetAxios = axios.create({
-    baseURL: process.env.SERVER_URL,
+const createCustomAxiosInstance = (baseUrl?: AxiosRequestConfig) => {
+    const basecConfig: AxiosRequestConfig = {
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+        },
+    };
+    return axios.create({
+        ...basecConfig,
+        ...baseUrl,
+        withCredentials: true,
+    });
+} ;
+
+export const MedinetAxios = createCustomAxiosInstance({
+    baseURL: SERVER_URL,
     headers: {
-        "Access-Control-Allow-Origin": "*",
+        [REQUEST_TOKEN]: `Bearer ${Token.getToken(ACCESS_TOKEN)}`!,
     },
-    withCredentials: true,
 });
 
-medinetAxios.interceptors.request.use(
-    (config: InternalAxiosRequestConfig) => requestInterceptor(config),
-    (error: AxiosError) => Promise.reject(error),
-);
-
-medinetAxios.interceptors.response.use(
-    (response: AxiosResponse) => response,
-    (error: AxiosError) => responseErrorInterceptor(error),
-);
-
-export default medinetAxios;
+MedinetAxios.interceptors.request.use((res) => res, requestInterceptor);
+MedinetAxios.interceptors.response.use((res) => res, responseErrorInterceptor);

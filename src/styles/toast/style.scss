@@ -1,0 +1,21 @@
+@use "src/styles/color/semantic.scss" as *;
+
+.Toastify__progress-bar {
+  height: 4px;
+}
+
+.progress-success {
+  background-color: var(--Status-Success) !important;
+}
+
+.progress-error {
+  background-color: var( --Status-Error) !important;
+}
+
+.progress-warning {
+  background-color: var(--Status-Warning) !important;
+}
+
+.progress-info {
+  background-color: var(--Status-Info) !important;
+}

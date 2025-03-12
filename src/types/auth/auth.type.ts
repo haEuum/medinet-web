@@ -1,10 +1,10 @@
-export interface LoginType {
+export interface Login {
     email: string;
     phone: string;
     password: string;
 };
 
-export interface RegisterType {
+export interface SignUp {
     email: string;
     phone: string;
     password: string;
@@ -13,11 +13,15 @@ export interface RegisterType {
     userClass: string;
 };
 
-export interface AuthResponseType {
+export interface AuthResponse {
     data: {
         accessToken: string;
         refreshToken: string;
     };
-    status: number;
-    message: string;
 };
+
+export interface NewAccessToken extends Response {
+    data: {
+        accessToken: string;
+    }
+}

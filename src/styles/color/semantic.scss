@@ -35,6 +35,11 @@
     --Normal-Normal: var(--Common-00);
     --Normal-Alternate: var(--Netural-99);
     --Normal-Neutral: var(--Netural-95);
+
+    --Status-Success: var(--Green-50);
+    --Status-Warning: var(--Yellow-50);
+    --Status-Error: var(--Red-50);
+    --Status-Info: var(--Blue-50);
   
     // Static Colors
     --Static-Black: var(--Common-100);
