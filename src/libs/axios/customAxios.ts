@@ -1,12 +1,7 @@
-import axios, { AxiosError, InternalAxiosRequestConfig } from "axios";
-import { ACCESS_TOKEN, REFRESH_TOKEN } from "@/constants/token/token";
-import { errorHandler } from "./errorHandler";
+import axios, { AxiosError, InternalAxiosRequestConfig, AxiosResponse } from "axios";
 import { requestInterceptor } from "./requestInterceptor";
 import { responseErrorInterceptor } from "./responseErrorInterceptor";
 
-interface CustomAxiosRequestConfig extends InternalAxiosRequestConfig {
-    retry?: boolean;
-};
 
 const medinetAxios = axios.create({
     baseURL: process.env.SERVER_URL,
@@ -17,21 +12,13 @@ const medinetAxios = axios.create({
 });
 
 medinetAxios.interceptors.request.use(
-    (config: CustomAxiosRequestConfig) => {
-        return requestInterceptor(config);
-    },
-    (error: AxiosError) => {
-        return errorHandler(error);
-    },
+    (config: InternalAxiosRequestConfig) => requestInterceptor(config),
+    (error: AxiosError) => Promise.reject(error),
 );
 
 medinetAxios.interceptors.response.use(
-    (response) => {
-        return response;
-    },
-    (error: AxiosError) => {
-        return responseErrorInterceptor(error);
-    },
+    (response: AxiosResponse) => response,
+    (error: AxiosError) => responseErrorInterceptor(error),
 );
 
 export default medinetAxios;

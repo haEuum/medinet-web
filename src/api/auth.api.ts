@@ -2,7 +2,7 @@ import axios from 'axios';
 import { ACCESS_TOKEN, REFRESH_TOKEN } from '@/constants/token/token';
 import Token from '@/libs/token/token';
 import medinetAxios from '@/libs/axios/customAxios';
-import { LoginType } from '@/types/auth/login.type';
+import { LoginType } from '@/types/auth/auth.type';
 import { SignupType } from '@/types/auth/signup.type';
 
 const saveToken = (accessToken: string, refreshToken: string) => {
