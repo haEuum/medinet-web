@@ -3,7 +3,7 @@ import { ACCESS_TOKEN, REFRESH_TOKEN } from '@/constants/token/token';
 import Token from '@/libs/token/token';
 import medinetAxios from '@/libs/axios/customAxios';
 import { LoginType } from '@/types/auth/auth.type';
-import { SignupType } from '@/types/auth/signup.type';
+import { RegisterType } from '@/types/auth/auth.type';
 
 const saveToken = (accessToken: string, refreshToken: string) => {
     Token.setToken(ACCESS_TOKEN, accessToken);
@@ -27,7 +27,7 @@ export const login = async (LoginData: LoginType) => {
     };
 };
 
-export const signup = async (SignupData: SignupType) => {
+export const Register = async (SignupData: RegisterType) => {
     try {
         const response = await medinetAxios.post(`${process.env.SERVER_URL}/signup`, SignupData);
         return response.data;
