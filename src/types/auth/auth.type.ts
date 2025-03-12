@@ -23,5 +23,5 @@ export interface AuthResponse {
 export interface NewAccessToken extends Response {
     data: {
         accessToken: string;
-    }
-}
+    };
+};

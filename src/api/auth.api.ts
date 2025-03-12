@@ -1,5 +1,5 @@
-import {MedinetAxios} from "@/libs/axios/customAxios";
-import {Login, AuthResponse, NewAccessToken} from "@/types/auth/auth.type";
+import { MedinetAxios } from "@/libs/axios/customAxios";
+import { Login, AuthResponse, NewAccessToken } from "@/types/auth/auth.type";
 
 const SERVER_URL = process.env.VITE_SERVER_URL;
 
