@@ -29,10 +29,11 @@ const useLogin = () => {
 
             const response = await axios.post<AuthResponse>(`${ process.env.VITE_SERVER_URL }/login`, login);
 
-            const { data: { accessToken, refreshToken }} = response.data;
+            const accessToken = response.data.data.accessToken;
+            const refreshToken = response.data.data.refreshToken;
 
-            localStorage.setItem('accessToken', accessToken);
-            localStorage.setItem('refreshToken', refreshToken);
+            sessionStorage.setItem('accessToken', accessToken);
+            sessionStorage.setItem('refreshToken', refreshToken);
 
             navigate('/');
 
