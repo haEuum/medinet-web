@@ -31,6 +31,13 @@ const useLogin = () => {
     };
 
     const handleLogin = async () => {
+        const { email, phone, password } = loginData;
+
+        if (!email || !phone || !password) {
+            Toast("error", "모든 항목을 입력해주세요.");
+            return;
+        };
+        
         try {
 
             const response = await MedinetAxios.post<AuthResponse>(
