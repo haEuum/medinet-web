@@ -8,8 +8,8 @@ export const login = async (login: Login):Promise<AuthResponse> => {
         const {data} = await MedinetAxios.post<AuthResponse>(`${SERVER_URL}/login`, login);
         return data;
     } catch (error) {
-        throw new Error("로그인 요청에 실패했습니다.")
-    }
+        throw new Error("로그인 요청 실패");
+    };
 };
 
 export const refresh = async (refreshToken: {refreshToken: string | null}): Promise<NewAccessToken> => {
@@ -18,5 +18,5 @@ export const refresh = async (refreshToken: {refreshToken: string | null}): Prom
         return data;
     } catch (error) {
         throw new Error("리프레쉬 에러");
-    }
+    };
 };
