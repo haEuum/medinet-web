@@ -4,6 +4,8 @@ import { AuthResponse, Login } from '@/types/auth/auth.type';
 import { MedinetAxios } from '@/libs/axios/customAxios';
 import { Token } from '@/libs/token/session';
 import { ACCESS_TOKEN, REFRESH_TOKEN } from '@/constants/token/token.constants';
+import { login } from '@/api/auth.api';
+import { path } from '@/constants/path/path';
 import { Toast } from '@/libs/toast';
 
 
@@ -37,7 +39,7 @@ const useLogin = () => {
             Toast("error", "모든 항목을 입력해주세요.");
             return;
         };
-        
+
         try {
 
             const response = await MedinetAxios.post<AuthResponse>(
@@ -51,7 +53,7 @@ const useLogin = () => {
             Token.setToken(ACCESS_TOKEN, accessToken);
             Token.setToken(REFRESH_TOKEN, refreshToken);
 
-            navigate('/');
+            navigate(path.HOME);
 
         } catch (err) {
             Toast("error", "로그인 실패");
