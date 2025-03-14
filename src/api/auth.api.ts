@@ -3,20 +3,20 @@ import { Login, AuthResponse, NewAccessToken } from "@/types/auth/auth.type";
 
 const SERVER_URL = process.env.VITE_SERVER_URL;
 
-export const login = async (login: Login):Promise<AuthResponse> => {
+export const login = async ( login: Login ):Promise<AuthResponse> => {
     try {
-        const {data} = await MedinetAxios.post<AuthResponse>(`${SERVER_URL}/login`, login);
+        const { data } = await MedinetAxios.post<AuthResponse>(`${SERVER_URL}/login`, login);
         return data;
     } catch (error) {
         throw new Error("로그인 요청 실패");
     };
 };
 
-export const refresh = async (refreshToken: {refreshToken: string | null}): Promise<NewAccessToken> => {
+export const refresh = async ( refreshToken: { refreshToken: string | null } ): Promise<NewAccessToken> => {
     try {
-        const {data} = await MedinetAxios.post<NewAccessToken>(`${SERVER_URL}/reissue`, refreshToken);
+        const { data } = await MedinetAxios.post<NewAccessToken>(`${SERVER_URL}/reissue`, refreshToken);
         return data;
     } catch (error) {
-        throw new Error("리프레쉬 에러");
+        throw new Error("리프레시 에러");
     };
 };
