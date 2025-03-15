@@ -27,7 +27,7 @@ const useLogin = () => {
     const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
             handleLogin();
-        }
+        };
     };
 
     const handleLogin = async () => {
@@ -36,7 +36,7 @@ const useLogin = () => {
         if (!email || !phone || !password) {
             Toast("error", "모든 항목을 입력해주세요.");
             return;
-        }
+        };
 
         try {
 
@@ -50,10 +50,13 @@ const useLogin = () => {
             Token.setToken(ACCESS_TOKEN, accessToken);
             Token.setToken(REFRESH_TOKEN, refreshToken);
 
+            Toast("success", "로그인 성공");
+
             navigate(path.HOME);
+
         } catch (err) {
             Toast("error", "로그인 실패");
-        }
+        };
     };
 
     return {

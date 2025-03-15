@@ -2,10 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SignUp } from '@/types/auth/auth.type';
 import { signup } from '@/api/auth.api';
-import { Token } from '@/libs/token/session';
 import { Toast } from '@/libs/toast';
 import { path } from '@/constants/path/path';
-import { ACCESS_TOKEN, REFRESH_TOKEN } from '@/constants/token/token.constants';
 
 const isValidEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -60,17 +58,30 @@ const useSignup = () => {
         };
 
         try {
-            const response = await signup({ email, phone, password, name, userClass, field });
+            const response = await signup({ 
+                email, 
+                phone, 
+                password, 
+                name, 
+                userClass, 
+                field 
+            });
 
-            const { accessToken, refreshToken } = response.data;
-
-            Token.setToken(ACCESS_TOKEN, accessToken);
-            Token.setToken(REFRESH_TOKEN, refreshToken);
+            Toast("success", "회원가입 성공");
 
             navigate(path.LOGIN);
+
         } catch (err) {
             Toast("error", "회원가입 실패");
         };
     };
+    
+    return {
+        signupData,
+        onChange,
+        onKeyDown,
+        handleSignup,
+    };
 };
+
 export default useSignup;
