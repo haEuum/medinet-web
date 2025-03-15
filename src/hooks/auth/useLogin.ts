@@ -39,13 +39,10 @@ const useLogin = () => {
         };
 
         try {
-
             const response = await login({ email, phone, password });
-
 
             const accessToken = response.data.accessToken;
             const refreshToken = response.data.refreshToken;
-
 
             Token.setToken(ACCESS_TOKEN, accessToken);
             Token.setToken(REFRESH_TOKEN, refreshToken);
