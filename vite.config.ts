@@ -8,7 +8,7 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"), // '@'를 src로 매핑
+      "@": path.resolve(__dirname, "src"),
     },
   },
 });
