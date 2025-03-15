@@ -12,7 +12,6 @@ const useLogin = () => {
 
     const [loginData, setLoginData] = useState<Login>({
         email: "",
-        phone: "",
         password: "",
     });
 
@@ -31,15 +30,15 @@ const useLogin = () => {
     };
 
     const handleLogin = async () => {
-        const { email, phone, password } = loginData;
+        const { email, password } = loginData;
 
-        if (!email || !phone || !password) {
+        if (!email || !password) {
             Toast("error", "모든 항목을 입력해주세요.");
             return;
         };
 
         try {
-            const response = await login({ email, phone, password });
+            const response = await login({ email, password });
 
             const accessToken = response.data.accessToken;
             const refreshToken = response.data.refreshToken;

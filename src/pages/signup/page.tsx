@@ -1,10 +1,10 @@
 import React from 'react';
 import './style.scss';
 
-const Home = () => {
+const Signup = () => {
     return (
         <div></div>
     );
 };
 
-export default Home;
+export default Signup;
