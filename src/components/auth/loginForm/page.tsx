@@ -1,22 +1,28 @@
-import React from 'react';
-import logo from '@/assets/logo.svg';
-import loginBanner from '@/assets/loginBanner.svg';
+import { useNavigate } from 'react-router-dom';
+import { path } from '@/constants/path/path';
 import useLogin from '@/hooks/auth/useLogin';
-import googleIcon from '@/assets/googleIcon.svg';
-import kakaoIcon from '@/assets/kakaoIcon.svg';
+import Logo from '@/assets/logo.svg';
+import LoginBanner from '@/assets/loginBanner.svg';
+import GoogleIcon from '@/assets/googleIcon.svg';
+import KakaoIcon from '@/assets/kakaoIcon.svg';
 import './style.scss';
 
 const LoginForm = () => {
+    const navigate = useNavigate();
     const { loginData, onChange, onKeyDown, handleLogin } = useLogin();
+
+    const handleSignupRedirect = () => {
+        navigate(path.SIGNUP);
+    };
 
     return (
         <div className='login-form-container'>
             <div className='login-form-banner'>
-                <img src={loginBanner} alt='banner' />
+                <img src={ LoginBanner } alt='banner' />
             </div>
             <div className='login-form-box'>
                 <div className='login-form-logo'>
-                    <img src={logo} alt='logo' />
+                    <img src={ Logo } alt='logo' />
                 </div>
                 <form className='login-form' onSubmit={(e) => e.preventDefault()}>
                     <div className='login-form-group'>
@@ -46,14 +52,14 @@ const LoginForm = () => {
                     </button>
                     <div className='oauth-button'>
                         <button>
-                            <img src={googleIcon} alt='google' />
+                            <img src={ GoogleIcon } alt='google' />
                         </button>
                         <button>
-                            <img src={kakaoIcon} alt='kakao' />
+                            <img src={ KakaoIcon } alt='kakao' />
                         </button>
                     </div>
                     <div className='signup-link'>
-                        계정이 없으신가요? <span >계정 생성하기</span>
+                        계정이 없으신가요? <span onClick={ handleSignupRedirect }>계정 생성하기</span>
                     </div>
                 </form>
             </div>
