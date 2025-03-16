@@ -24,5 +24,5 @@
       "@/*": ["src/*"]  // '@'를 src 폴더로 매핑
     }
   },
-  "include": ["src", "./@types", "node_modules"]
+  "include": ["src", "@types", "node_modules"]
 }
