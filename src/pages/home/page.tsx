@@ -1,9 +1,8 @@
-import React from 'react';
 import './style.scss';
 
 const Home = () => {
     return (
-        <div></div>
+        <div>여기는 홈화면 입니다</div>
     );
 };
 

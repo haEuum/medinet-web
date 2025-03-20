@@ -10,6 +10,8 @@ export interface SignUp {
     field: string;
     name: string;
     userClass: string;
+    phoneVerificationCode: string;
+    emailVerificationCode: string;
 };
 
 export interface AuthResponse {

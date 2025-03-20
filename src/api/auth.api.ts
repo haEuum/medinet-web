@@ -29,3 +29,21 @@ export const signup = async ( signUpData: SignUp ): Promise<AuthResponse> => {
         throw new Error("회원가입 요청 실패");
     };
 };
+
+export const sendPhoneVerificationCode = async ( phone: string ) => {
+    try {
+        const { data } = await MedinetAxios.post(`${SERVER_URL}/sms/send`, { phone });
+        return data;
+    } catch (error) {
+        throw new Error("인증번호 전송 실패");
+    };
+};
+
+export const sendEmailVerificationCode = async ( email: string ) => {
+    try {
+        const { data } = await MedinetAxios.post(`${SERVER_URL}/mailSend`, { email });
+        return data;
+    } catch (error) {
+        throw new Error("이메일 전송 실패");
+    };
+};

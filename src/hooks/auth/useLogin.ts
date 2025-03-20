@@ -48,7 +48,7 @@ const useLogin = () => {
 
             Toast("success", "로그인 성공");
 
-            navigate(path.HOME);
+            navigate(path.HOME.path);
 
         } catch (err) {
             Toast("error", "로그인 실패");
