@@ -7,10 +7,10 @@ const OauthButton = () => {
         <div className="oauth-button-container">
             <div className="oauth-button">
                 <button className="google">
-                    <img src={googleIcon} alt="Google Icon" />
+                    <img src={ googleIcon } alt="Google Icon" />
                 </button>
                 <button className="kakao">
-                    <img src={kakaoIcon} alt="Kakao Icon" />
+                    <img src={ kakaoIcon } alt="Kakao Icon" />
                 </button>
             </div>
         </div>

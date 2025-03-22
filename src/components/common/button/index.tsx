@@ -1,4 +1,3 @@
-import React from 'react';
 import './style.scss';
 
 interface ButtonProps {
@@ -6,9 +5,9 @@ interface ButtonProps {
     onClick: () => void;
 };
 
-const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
+const Button = ({ text, onClick }: ButtonProps) => {
     return (
-        <button onClick={ onClick } className="login-button">
+        <button onClick={onClick} className='button'>
             { text }
         </button>
     );
