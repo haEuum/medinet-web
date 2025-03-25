@@ -1,28 +1,26 @@
 .oauth-button-container {
     display: flex;
-    gap: 20px;
-    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .oauth-button {
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    gap: 20px;
 }
 
-button {
-    padding: 6px;
-    width: 150px;
+.google, .kakao {
+    width: 140px;
     height: 50px;
+    border-radius: 14px;
     border: none;
+    background-color: var(--Common-00);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    border-radius: 12px;
-    background: var(--Fill-Assistive);
-    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-        opacity: 0.9;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    }
+    transition: all 0.3s ease;
 }

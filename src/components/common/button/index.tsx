@@ -7,7 +7,7 @@ interface ButtonProps {
 
 const Button = ({ text, onClick }: ButtonProps) => {
     return (
-        <button onClick={onClick} className='button'>
+        <button onClick={onClick} className='button-container'>
             { text }
         </button>
     );

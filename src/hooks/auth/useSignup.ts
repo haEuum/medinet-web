@@ -5,12 +5,16 @@ import { signup } from '@/api/auth.api';
 import { Toast } from '@/libs/toast';
 import { path } from '@/constants/path/path';
 
-const isValidEmail = (email: string) => {
+const isValidEmail = ( email: string ) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 };
 
-const isValidPassword = (password: string) => {
+const isValidPassword = ( password: string ) => {
     return /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password);
+};
+
+const inValidPhone = ( phone: string ) => {
+    return !/^[0-9]{10,11}$/.test(phone);
 };
 
 const useSignup = () => {
@@ -56,6 +60,11 @@ const useSignup = () => {
 
         if (!isValidPassword(password)) {
             Toast("error", "비밀번호는 8자 이상, 숫자, 문자, 특수문자를 포함해야합니다.");
+            return;
+        };
+
+        if (inValidPhone(phone)) {
+            Toast("error", "올바른 전화번호 형식을 작성해주세요.");
             return;
         };
 

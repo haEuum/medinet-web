@@ -30,29 +30,29 @@ const Signup = () => {
     };
 
     return (
-        <div className='signup-form-container'>
-            <div className='signup-form-box'>
-                <div className='signup-form-image'>
+        <div className='signup-page'>
+            <div className='signup-container'>
+                <div className='signup-banner'>
                     <img src={ SignupBanner } alt='signupBanner' />
                 </div>
-                <div className='signup-form-content'>
-                    <div className='signup-form-logo'>
+                <div className='signup-form'>
+                    <div className='signup-logo'>
                         <img src={ Logo } alt='logo' />
                     </div>
-                    <form className='signup-form' onSubmit={(e) => e.preventDefault()}>
-                        <div className='signup-form-group'>
+                    <form className='signup-form-body' onSubmit={(e) => e.preventDefault()}>
+                        <div className='signup-step-group'>
                             {step === 1 && <Step1 />}
                             {step === 2 && <Step2 />}
                             {step === 3 && <Step3 />}
                             {step === 4 && <Step4 />}
                         </div>
-                        <div className='signup-form-button'>
+                        <div className='signup-button-group'>
                             <Button text={ step < 4 ? '다음' : '가입하기' } onClick={ handleNextStep } />
                         </div>
                         <OauthButton />
-                        <div className='login-link'>
+                        <div className='login-redirect'>
                             이미 계정이 있으신가요? 
-                            <span onClick={ handleLoginRedirect }>로그인 하기</span>
+                            <span onClick={ handleLoginRedirect }> 로그인 하기</span>
                         </div>
                     </form>
                 </div>
