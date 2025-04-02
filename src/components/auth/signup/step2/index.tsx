@@ -17,31 +17,33 @@ const Step2 = () => {
     };
 
     return (
-        <div className='signup-input'>
-            <TextField 
-                label='이메일'
-                name='email'
-                placeholder='이메일을 입력해주세요'
-                value={signupData.email}
-                onChange={onChange}
-                onKeyDown={onKeyDown}
-            />
-            <TextField 
-                label='인증번호'
-                name='emailVerificationCode'
-                placeholder='인증번호를 입력해주세요'
-                value={signupData.emailVerificationCode}
-                onChange={onChange}
-            />
-            <div className="email-verification-btn-container">
-                <button
-                    type="button"
-                    className="email-verification-btn"
-                    onClick={handleEmailVerification}
-                >
-                    인증번호 재요청
-                </button>
+        <div className='step2-container'>
+            <div className='step2-input-group'>
+                <TextField 
+                    label='전화번호'
+                    name='phone'
+                    placeholder='전화번호를 입력해주세요'
+                    value={signupData.phone}
+                    onChange={onChange}
+                    onKeyDown={onKeyDown}
+                />
             </div>
+            <div className='step2-input-group'>
+                <TextField 
+                    label='인증번호'
+                    name='emailVerificationCode'
+                    placeholder='인증번호를 입력해주세요'
+                    value={signupData.emailVerificationCode}
+                    onChange={onChange}
+                />
+            </div>
+            <button
+                type="button"
+                onClick={handleEmailVerification}
+                className="phone-verification-btn"
+            >
+                인증번호 재요청
+            </button>
         </div>
     );
 };

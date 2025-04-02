@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import { path } from '@/constants/path/path';
 import useLogin from '@/hooks/auth/useLogin';
 import Button from '@/components/common/button/index';
-import OauthButton from '@/components/common/oauthButton/index';
 import LoginBanner from '@/assets/loginBanner.svg';
 import Logo from '@/assets/logo.svg';
 import TextField from '@/components/common/textField';
@@ -47,7 +46,6 @@ const Login = () => {
                         <div className='login-submit-button'>
                             <Button text='로그인하기' onClick={ handleLogin } />
                         </div>
-                        <OauthButton />
                         <div className='signup-redirect'>
                             계정이 없으신가요? 
                             <span onClick={ handleSignupRedirect }> 계정 생성하기</span>

@@ -38,7 +38,7 @@ const useLogin = () => {
         };
 
         try {
-            const response = await login({ email, password });
+            const response = await login(loginData);
 
             const accessToken = response.data.accessToken;
             const refreshToken = response.data.refreshToken;
