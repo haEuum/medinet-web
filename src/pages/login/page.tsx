@@ -6,10 +6,12 @@ import LoginBanner from '@/assets/loginBanner.svg';
 import Logo from '@/assets/logo.svg';
 import TextField from '@/components/common/textField/index';
 import './style.scss';
+import {useRef} from "react";
 
 const Login = () => {
     const navigate = useNavigate();
     const { loginData, onChange, handleLogin } = useLogin();
+    const divRef = useRef<HTMLFormElement>(null);
 
     const handleSignupRedirect = () => {
         navigate(path.SIGNUP);
@@ -25,7 +27,7 @@ const Login = () => {
                     <div className='logo-container'>
                         <img src={ Logo } alt='logo' />
                     </div>
-                    <form className='login-form-body' onSubmit={(e) => e.preventDefault()}>
+                    <form className='login-form-body' ref={divRef}>
                         <div className='login-input-group'>
                             <TextField 
                                 label='이메일'

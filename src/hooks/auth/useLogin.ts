@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Login } from '@/types/auth/auth.type';
-import { login } from '@/api/auth.api';
-import { Token } from '@/libs/token/session';
-import { ACCESS_TOKEN, REFRESH_TOKEN } from '@/constants/token/token.constants';
-import { path } from '@/constants/path/path';
-import { Toast } from '@/libs/toast';
+import React, {useCallback, useState} from 'react';
+import {useNavigate} from 'react-router-dom';
+import {Login} from '@/types/auth/auth.type';
+import {login} from '@/api/auth.api';
+import {Token} from '@/libs/token/session';
+import {ACCESS_TOKEN, REFRESH_TOKEN} from '@/constants/token/token.constants';
+import {path} from '@/constants/path/path';
+import {Toast} from '@/libs/toast';
 
 const useLogin = () => {
     const navigate = useNavigate();
@@ -15,44 +15,31 @@ const useLogin = () => {
         password: "",
     });
 
-    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        setLoginData((prevState) => ({
-            ...prevState,
-            [name]: value,
-        }));
-    };
+    const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+        const {name, value} = e.target;
+        setLoginData((prev) => ({...prev, [name]: value}));
+    }, []);
 
-    const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === "Enter") {
-            handleLogin();
-        };
-    };
-
-    const handleLogin = async () => {
-        const { email, password } = loginData;
-
-        if (!email || !password) {
-            Toast("error", "모든 항목을 입력해주세요.");
-            return;
-        };
+    const handleLogin = useCallback(async () => {
+        if (!loginData.email.trim()) return Toast("info", "아이디를 입력햐주세요.");
+        if (!loginData.password.trim()) return Toast("info", "비밀번호를 입력햐주세요.");
 
         try {
-            const response = await login(loginData);
-
-            const accessToken = response.data.accessToken;
-            const refreshToken = response.data.refreshToken;
-
-            Token.setToken(ACCESS_TOKEN, accessToken);
-            Token.setToken(REFRESH_TOKEN, refreshToken);
-
+            const res = await login(loginData);
             Toast("success", "로그인 성공");
+
+            Token.setToken(ACCESS_TOKEN, res.data.accessToken);
+            Token.setToken(REFRESH_TOKEN, res.data.refreshToken);
 
             navigate(path.HOME);
 
         } catch (err) {
-            Toast("error", "로그인 실패");
-        };
+            Toast("error", "정보를 다시 확인해주세요.");
+        }
+    }, [loginData, navigate]);
+
+    const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter") handleLogin();
     };
 
     return {
