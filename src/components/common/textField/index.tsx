@@ -3,29 +3,35 @@ import './style.scss';
 
 interface TextFieldProps {
     label: string;
-    type?: string;
+    type: string;
     name: string;
     placeholder: string;
     value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
-const TextField = ({ label, type='text', name, placeholder, value, onChange }: TextFieldProps) => {
+const TextField = ({
+    label,
+    type,
+    name,
+    placeholder,
+    value,
+    onChange,
+}: TextFieldProps) => {
     return (
-        <div className='input-container'>
-            <label className='input-label'>{label}</label>
-            <div className='input-box'>
-                <input 
-                    className='input'
-                    type={type}
-                    name={name}
-                    placeholder={placeholder}
-                    value={value}
-                    onChange={onChange}
-                />
-            </div>
-        </div>
+        <div className='text-field'>
+            <label htmlFor={name} className='text-field-label'>
+                {label}
+            </label>
+            <input
+                type={type}
+                name={name}
+                placeholder={placeholder}
+                value={value}
+                onChange={onChange}
+                className='text-field-input'
+            />
+        </div> 
     );
 };
 

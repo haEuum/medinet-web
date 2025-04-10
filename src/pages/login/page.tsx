@@ -4,7 +4,7 @@ import useLogin from '@/hooks/auth/useLogin';
 import Button from '@/components/common/button/index';
 import LoginBanner from '@/assets/loginBanner.svg';
 import Logo from '@/assets/logo.svg';
-import TextField from '@/components/common/textField';
+import TextField from '@/components/common/textField/index';
 import './style.scss';
 
 const Login = () => {
@@ -29,6 +29,7 @@ const Login = () => {
                         <div className='login-input-group'>
                             <TextField 
                                 label='이메일'
+                                type='email'
                                 name='email'
                                 placeholder='이메일을 입력해주세요'
                                 value={loginData.email}
