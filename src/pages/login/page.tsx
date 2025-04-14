@@ -6,7 +6,7 @@ import LoginBanner from '@/assets/loginBanner.svg';
 import Logo from '@/assets/logo.svg';
 import TextField from '@/components/common/textField/index';
 import './style.scss';
-import {useRef} from "react";
+import { useRef } from "react";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -30,24 +30,31 @@ const Login = () => {
                     <form className='login-form-body' ref={divRef}>
                         <div className='login-input-group'>
                             <TextField 
+                                width='320px'
                                 label='이메일'
                                 type='email'
                                 name='email'
                                 placeholder='이메일을 입력해주세요'
                                 value={loginData.email}
-                                onChange={onChange}
+                                onChange={ onChange }
                             />
                             <TextField 
+                                width='320px'
                                 label='비밀번호'
                                 type='password'
                                 name='password'
                                 placeholder='비밀번호를 입력해주세요'
                                 value={loginData.password}
-                                onChange={onChange}
+                                onChange={ onChange }
                             />
                         </div>
                         <div className='login-submit-button'>
-                            <Button text='로그인하기' onClick={ handleLogin } />
+                            <Button
+                                text='로그인'
+                                onClick={ handleLogin }
+                                width='340px'
+                                height='50px'
+                            />
                         </div>
                         <div className='signup-redirect'>
                             계정이 없으신가요? 

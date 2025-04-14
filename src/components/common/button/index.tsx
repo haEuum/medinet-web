@@ -3,12 +3,18 @@ import './style.scss';
 interface ButtonProps {
     text: string;
     onClick: () => void;
+    width: string;
+    height: string;
 };
 
-const Button = ({ text, onClick }: ButtonProps) => {
+const Button = ({ text, onClick, width, height }: ButtonProps) => {
     return (
-        <button onClick={onClick} className='button-container'>
-            { text }
+        <button
+            className='button-component'
+            onClick={onClick}
+            style={{ width, height }}
+        >
+            {text}
         </button>
     );
 };

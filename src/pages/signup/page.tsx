@@ -44,7 +44,12 @@ const Signup = () => {
                             {step === 3 && <Step3 />}
                         </div>
                         <div className='signup-button-group'>
-                            <Button text={ step < 3 ? '다음' : '가입하기' } onClick={ handleNextStep } />
+                            <Button 
+                                text={ step < 3 ? '다음' : '가입하기' }
+                                onClick={ handleNextStep }
+                                width='340px'
+                                height='50px'
+                            />
                         </div>
                         <div className='login-redirect'>
                             이미 계정이 있으신가요? 
