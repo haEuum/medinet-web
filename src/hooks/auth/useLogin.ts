@@ -11,7 +11,7 @@ const useLogin = () => {
     const navigate = useNavigate();
 
     const [loginData, setLoginData] = useState<Login>({
-        email: "",
+        name: "",
         password: "",
     });
 
@@ -21,7 +21,7 @@ const useLogin = () => {
     }, []);
 
     const handleLogin = useCallback(async () => {
-        if (!loginData.email.trim()) return Toast("info", "아이디를 입력햐주세요.");
+        if (!loginData.name.trim()) return Toast("info", "이름을 입력햐주세요.");
         if (!loginData.password.trim()) return Toast("info", "비밀번호를 입력햐주세요.");
 
         try {

@@ -1,0 +1,19 @@
+.progressbar-wrapper {
+  width: 100%;
+  padding: 0 40px;
+  margin: 20px 0;
+}
+
+.progressbar-track {
+  width: 100%;
+  height: 6px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressbar-filled {
+  height: 100%;
+  background-color: var(--Primary-Normal);
+  transition: width 0.3s ease;
+}

@@ -7,7 +7,6 @@ interface TextFieldProps {
     name: string;
     placeholder: string;
     value: string;
-    width: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -17,7 +16,6 @@ const TextField = ({
     name,
     placeholder,
     value,
-    width,
     onChange,
 }: TextFieldProps) => {
     return (
@@ -30,7 +28,6 @@ const TextField = ({
                 name={ name }
                 placeholder={ placeholder }
                 value={ value }
-                width={ width }
                 onChange={ onChange }
                 className='text-field-input'
             />

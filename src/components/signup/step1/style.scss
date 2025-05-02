@@ -1,0 +1,12 @@
+.signup-step1 {
+  display: flex;
+  justify-content: center;
+
+  .signup-step1-input-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
