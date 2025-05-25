@@ -11,7 +11,6 @@ export interface SignUp {
     name: string;
     userClass: string;
     phoneVerificationCode: string;
-    emailVerificationCode: string;
 };
 
 export interface AuthResponse {

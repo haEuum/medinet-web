@@ -1,7 +1,10 @@
-import TextField from "@/components/common/textField";
+import TextField from "@/components/common/textbox";
+import useSignup from "@/hooks/auth/useSignup";
 import "./style.scss";
 
 const Step2 = () => {
+  const { signupData, handlePhoneVerification, onChange } = useSignup();
+
   return (
     <div className="signup-step2">
       <div className="signup-step2-input-group">
@@ -11,20 +14,20 @@ const Step2 = () => {
             type="phoneNum"
             name="phoneNum"
             placeholder="전화번호를 입력해주세요"
-            value=""
-            onChange={() => {}}
+            value={ signupData.phone }
+            onChange={ onChange }
           />
-          <button className="AuthenticationButton">
-            인증하기
-          </button>
+          <button 
+            className="AuthenticationButton"
+            onClick={ handlePhoneVerification }>인증하기</button>
         </div>
         <TextField
           label="인증번호"
           type="authenticationCode"
           name="authenticationCode"
           placeholder="인증번호를 입력해주세요"
-          value=""
-          onChange={() => {}}
+          value={ signupData.phoneVerificationCode }
+          onChange={ onChange }
         />
       </div>
     </div>

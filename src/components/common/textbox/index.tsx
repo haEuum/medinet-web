@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 
-interface TextFieldProps {
+interface TextboxProps {
     label: string;
     type: string;
     name: string;
@@ -17,7 +17,7 @@ const TextField = ({
     placeholder,
     value,
     onChange,
-}: TextFieldProps) => {
+}: TextboxProps) => {
     return (
         <div className='text-field'>
             <label htmlFor={ name } className='text-field-label'>

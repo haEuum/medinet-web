@@ -32,11 +32,11 @@ const Signup = () => {
     <div className="signup-page">
       <div className="signup-container">
         <div className="signup-banner">
-          <img src={SignupBanner} alt="signupBanner" />
+          <img src={ SignupBanner } alt="signupBanner" />
         </div>
         <div className="signup-form">
           <div className="signup-logo">
-            <img src={Logo} alt="logo" />
+            <img src={ Logo } alt="logo" />
           </div>
           <ProgressBar step={step} />
           <div className="signup-input-group">
@@ -47,12 +47,12 @@ const Signup = () => {
           <div className="signup-button-group">
             <Button
               text={step < 3 ? "다음" : "가입하기"}
-              onClick={handleNextStep}
+              onClick={ handleNextStep }
             />
           </div>
           <div className="login-redirect">
             이미 계정이 있으신가요?
-            <span onClick={handleLoginRedirect}> 로그인 하기</span>
+            <span onClick={ handleLoginRedirect }> 로그인 하기</span>
           </div>
         </div>
       </div>

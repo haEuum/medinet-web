@@ -23,7 +23,7 @@ const Step3 = () => {
             name="field"
             className="signup-select"
             value={selectedField}
-            onChange={handleFieldChange}
+            onChange={ handleFieldChange }
           >
             <option value="">직군을 선택해주세요</option>
             {fieldOptions.map((field) => (

@@ -4,7 +4,7 @@ import useLogin from "@/hooks/auth/useLogin";
 import Button from "@/components/common/button/index";
 import LoginBanner from "@/assets/loginBanner.svg";
 import Logo from "@/assets/logo.svg";
-import TextField from "@/components/common/textField/index";
+import TextField from "@/components/common/textbox/index";
 import "./style.scss";
 
 const Login = () => {
@@ -19,7 +19,7 @@ const Login = () => {
     <div className="login-page">
       <div className="login-container">
         <div className="login-banner">
-          <img src={LoginBanner} alt="LoginBanner" />
+          <img src={ LoginBanner } alt="LoginBanner" />
         </div>
         <div className="login-form">
           <div className="logo-container">
@@ -31,7 +31,7 @@ const Login = () => {
               type="name"
               name="name"
               placeholder="이름을 입력해주세요"
-              value={loginData.name}
+              value={ loginData.name }
               onChange={onChange}
             />
             <TextField
@@ -44,7 +44,7 @@ const Login = () => {
             />
           </div>
           <div className="login-submit-button">
-            <Button text="로그인" onClick={handleLogin} />
+            <Button text="로그인" onClick={ handleLogin } />
           </div>
           <div className="signup-redirect">
             계정이 없으신가요?
