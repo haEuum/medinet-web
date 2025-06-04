@@ -21,8 +21,13 @@ const useLogin = () => {
     }, []);
 
     const handleLogin = useCallback(async () => {
-        if (!loginData.name.trim()) return Toast("info", "이름을 입력해주세요.");
-        if (!loginData.password.trim()) return Toast("info", "비밀번호를 입력해주세요.");
+        if (!loginData.name.trim()) {
+            return Toast("info", "이름을 입력해주세요!");
+        }
+
+        if (!loginData.password.trim()) {
+            return Toast("info", "비밀번호를 입력해주세요!");
+        }
 
         try {
             const res = await login(loginData);

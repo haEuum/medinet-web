@@ -1,4 +1,4 @@
-export interface Verification {
+export interface VerificationRequest {
     phoneNumber: string;
 }
 

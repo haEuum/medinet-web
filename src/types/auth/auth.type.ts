@@ -8,7 +8,6 @@ export interface SignUp {
     phone: string;
     password: string;
     field: string;
-    name: string;
     userClass: string;
     phoneVerificationCode: string;
 };
