@@ -2,7 +2,7 @@ import { useState } from "react";
 import { fieldOptions } from "@/types/field/fieldoptions";
 import "./style.scss";
 
-const Step3 = () => {
+const Work = () => {
   const [selectedField, setSelectedField] = useState("");
 
   const handleFieldChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -12,8 +12,7 @@ const Step3 = () => {
   const currentField = fieldOptions.find((f) => f.value === selectedField);
 
   return (
-    <div className="signup-step3">
-      <div className="signup-step3-input-group">
+      <>
         <div className="form-group">
           <label className="form-label" htmlFor="field">
             직군
@@ -55,9 +54,8 @@ const Step3 = () => {
             )}
           </select>
         </div>
-      </div>
-    </div>
+      </>
   );
 };
 
-export default Step3;
+export default Work;

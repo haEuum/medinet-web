@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Login } from '@/types/auth/auth.type';
-import { login } from '@/api/auth/auth.api';
+import { Login } from '@/types/login/auth.type';
+import { login } from '@/api/login/login.api';
 import { Token } from '@/libs/token/session';
 import { ACCESS_TOKEN, REFRESH_TOKEN } from '@/constants/token/token.constants';
 import { path } from '@/constants/path/path';

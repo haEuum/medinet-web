@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SignUp } from '@/types/auth/auth.type';
-import { signup } from '@/api/auth/auth.api';
+import {SignUp} from "@/types/signup/signup.type";
+import {signup} from "@/api/signup/signup.api";
 import { VerificationRequest } from '@/types/verification/verification.type';
 import { verification } from '@/api/verification/verification.api';
 import { Toast } from '@/libs/toast';
@@ -13,7 +13,7 @@ const useSignup = () => {
 
     const [ signupData, setSignupData ] = useState<SignUp>({
         email: "",
-        phone: "",
+        phoneNumber: "",
         password: "",
         field: "",
         userClass: "",
@@ -34,12 +34,12 @@ const useSignup = () => {
 
     const handlePhoneVerification = useCallback( async () => {
         try {
-            await verification({ phoneNumber: signupData.phone } as VerificationRequest );
+            await verification({ phoneNumber: signupData.phoneNumber } as VerificationRequest );
             Toast("success", "인증번호가 발송되었습니다!");
         } catch (error) {
             Toast("error", "인증번호 발송을 실패했습니다!");
         };
-    }, [ signupData.phone ]);
+    }, [ signupData.phoneNumber ]);
 
     const handleSignup = useCallback(async () => {
         const validationError = validateSignup(signupData);

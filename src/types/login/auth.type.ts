@@ -1,26 +1,17 @@
 export interface Login {
     name: string;
     password: string;
-};
-
-export interface SignUp {
-    email: string;
-    phone: string;
-    password: string;
-    field: string;
-    userClass: string;
-    phoneVerificationCode: string;
-};
+}
 
 export interface AuthResponse {
     data: {
         accessToken: string;
         refreshToken: string;
-    };
-};
+    }
+}
 
 export interface NewAccessToken extends Response {
     data: {
         accessToken: string;
-    };
-};
+    }
+}

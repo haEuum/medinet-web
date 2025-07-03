@@ -1,81 +1,51 @@
-.login-page {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #e4e4e5;
+@use "@/styles/function/function" as *;
+@use "@/styles/typography/typography" as *;
+
+.auth-page {
+  @include flex-center;
+  background-color: var(--Backgroud-Alternative);
 }
 
-.login-container {
-  width: 850px;
-  min-height: 600px;
-
-  display: flex;
-  border-radius: 12px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.auth-container {
+  @include flex-center;
+  border-radius: var(--extra-small);
+  box-shadow: var(--black-shadow-3);
 }
 
-.login-banner {
-  flex: 1.1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.auth-banner {
+  @include flex-center;
+  overflow: hidden;
 
   img {
+    display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
+    border-bottom-left-radius: var(--extra-small);
+    border-top-left-radius: var(--extra-small);
   }
 }
 
-.login-form {
-  flex: 0.9;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  padding: 20px;
-
+.auth-form {
+  @include flex-column;
+  @include flex-center;
+  overflow: hidden;
+  height: 100%;
+  padding: 40px 20px;
   gap: 30px;
 
-  .logo-container {
-    margin-left: -10px;
-  }
-
-  .login-form-body {
+  .auth-input-group {
+    @include flex-column;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+    min-width: 340px;
   }
 
-  .login-input-group {
-    width: 100%;
-    gap: 30px;
-  }
+  .redirect {
+    span:nth-child(1) {
+      @include label-medium;
+    }
 
-  .login-submit-button {
-    width: 100%;
-  }
-
-  .signup-redirect {
-    font-size: 14px;
-
-    span {
-      font-weight: 800;
-      color: #385c7a;
-      cursor: pointer;
+    span:nth-child(2) {
+      @include label-bold;
+      color: var(--Primary-Alternate);
     }
   }
 }

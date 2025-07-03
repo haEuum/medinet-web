@@ -1,7 +1,4 @@
 .signup-page {
-  position: absolute;
-  top: 0;
-  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,11 +6,7 @@
   width: 100vw;
   margin: 0;
   padding: 0;
-  background-color: #e4e4e5;
-}
-
-.signup-logo {
-  margin-left: -10px;
+  background-color: var(--Backgroud-Alternate);
 }
 
 .signup-container {

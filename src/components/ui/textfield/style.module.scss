@@ -1,0 +1,43 @@
+@use "@/styles/typography/typography" as *;
+@use "@/styles/function/function" as *;
+
+.text-field {
+  @include flex-column;
+  gap: 10px;
+  width: 100%;
+  padding: 5px 10px;
+
+  .text-field-label {
+    @include body-medium;
+  }
+
+  .text-field-input {
+    @include label-medium;
+    display: flex;
+    width: 100%;
+    border: none;
+    align-items: center;
+    border-radius: var(--extra-large);
+    color: var(--Label-Normal);
+    padding: 15px;
+    box-shadow: var(--black-shadow-2);
+
+    &:focus {
+      outline: none;
+    }
+
+    ::placeholder {
+      color: var(--Label-Assistive);
+    }
+  }
+
+  .clear-button {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}

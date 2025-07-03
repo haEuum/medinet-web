@@ -1,24 +1,22 @@
-import TextField from "@/components/common/textbox";
+import TextField from "@/components/ui/textfield";
 import useSignup from "@/hooks/auth/useSignup";
-import "./style.scss";
+import Button from "@/components/common/button";
 
-const Step2 = () => {
+const Tel = () => {
   const { signupData, handlePhoneVerification, onChange } = useSignup();
 
   return (
-    <div className="signup-step2">
-      <div className="signup-step2-input-group">
-        <div className="signup-step2-phone-input">
+      <>
+        <div className="tel_access">
           <TextField
             label="전화번호"
-            type="phoneNum"
-            name="phoneNum"
+            type="number"
+            name="phoneNumber"
             placeholder="전화번호를 입력해주세요"
-            value={ signupData.phone }
+            value={ signupData.phoneNumber }
             onChange={ onChange }
           />
-          <button 
-            className="AuthenticationButton"
+          <button
             onClick={ handlePhoneVerification }>인증하기</button>
         </div>
         <TextField
@@ -29,9 +27,8 @@ const Step2 = () => {
           value={ signupData.phoneVerificationCode }
           onChange={ onChange }
         />
-      </div>
-    </div>
+      </>
   );
 };
 
-export default Step2;
+export default Tel;
