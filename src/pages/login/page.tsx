@@ -1,7 +1,7 @@
 import {useNavigate} from "react-router-dom";
 import {path} from "@/constants/path/path";
 import useLogin from "@/hooks/auth/useLogin";
-import Button from "@/components/common/button/index";
+import Button from "@/components/ui/button";
 import LoginBanner from "@/assets/loginBanner.svg";
 import Logo from "@/assets/logo.svg";
 import TextField from "@/components/ui/textfield/index";
@@ -41,7 +41,7 @@ const Login = () => {
                             onChange={onChange}
                         />
                     </div>
-                    <Button text="로그인" onClick={handleLogin}/>
+                    <Button text="로그인" size="Large" color="Primary" onClick={handleLogin}/>
                     <div className="redirect">
                         <span>계정이 없으신가요?</span>
                         <span onClick={handleSignupRedirect}> 계정 생성하기</span>

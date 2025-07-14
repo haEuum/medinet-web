@@ -1,0 +1,19 @@
+@use "@/styles/function/function" as *;
+@use "@/styles/typography/typography" as *;
+
+.button {
+  @include flex-center;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.extraLarge {padding: 14px 24px; border-radius: var(--large); @include headline2-bold;}
+.large {padding: 14px 20px; border-radius: var(--medium); @include body-bold;}
+.medium {padding: 10px 16px; border-radius: var(--small); @include label-bold;}
+.small {padding: 8px 12px; border-radius: var(--extra-small); @include caption-bold;}
+
+.primary {background-color: var(--Primary-Normal); color: var(--Static-White);}
+.alternative {background-color: var(--Primary-Alternative); color: var(--Secondary-Assistive);}
+.assistive {background-color: var(--Primary-Assistive); color: var(--Static-White);}
+.gray {background-color: var(--Netural-90); color: var(--Label-Alternate);}
