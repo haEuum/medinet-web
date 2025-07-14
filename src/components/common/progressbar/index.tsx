@@ -6,7 +6,7 @@ type Props = {
 };
 
 const ProgressBar: React.FC<Props> = ({ step }) => {
-  const progressPercentage = ((step - 1) / 2) * 100;
+  const progressPercentage = ((step - 1) / 3) * 100;
 
   return (
       <div className="progressbar-track">
