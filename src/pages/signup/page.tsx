@@ -43,9 +43,9 @@ const Signup = () => {
                     </div>
                     <ProgressBar step={step}/>
                     <div className="auth-input-group">
-                        {step === 1 && <Name/>}
-                        {step === 2 && <Tel inputCode={inputCode} setInputCode={setInputCode}/>}
-                        {step === 3 && <Work onKeyDown={onKeyDown}/>}
+                        {step === 1 && <Name onKeyDown={(e) => onKeyDown(e)} />}
+                        {step === 2 && <Tel inputCode={inputCode} setInputCode={setInputCode} onKeyDown={(e) => onKeyDown(e)} />}
+                        {step === 3 && <Work onKeyDown={(e) => onKeyDown(e, inputCode)} />}
                     </div>
                     <Button
                         text={step < 3 ? "다음" : "가입하기"}

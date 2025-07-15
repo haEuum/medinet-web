@@ -1,11 +1,11 @@
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signup } from '@/api/signup/signup.api';
 import { verification } from '@/api/verification/verification.api';
 import { VerificationRequest } from '@/types/verification/verification.type';
 import { Toast } from '@/libs/toast';
 import { path } from '@/constants/path/path';
 import { useSignupStore } from '@/stores/signup/signup.store';
+import { useSignupQuery } from '@/queries/signup/signup.query';
 
 interface UseSignupProps {
     step?: number;
@@ -15,6 +15,7 @@ interface UseSignupProps {
 const useSignup = ({ step, setStep }: UseSignupProps = {}) => {
     const navigate = useNavigate();
     const { signupData, setField } = useSignupStore();
+    const signupQuery = useSignupQuery();
 
     // 입력 필드 값 변경 처리
     const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -79,14 +80,13 @@ const useSignup = ({ step, setStep }: UseSignupProps = {}) => {
     };
 
     // 최종 회원가입 요청
-    const handleSignup = useCallback(async (inputCode: string) => {
+    const handleSignup = useCallback((inputCode: string) => {
         for (const { key, message } of requiredFields) {
             if (!signupData[key]) {
                 return Toast('error', message);
             }
         }
 
-        // 클라이언트에서 인증번호 일치 여부 검증
         if (!signupData.authenticationCode) {
             return Toast('error', '인증번호를 먼저 요청해주세요');
         }
@@ -95,7 +95,6 @@ const useSignup = ({ step, setStep }: UseSignupProps = {}) => {
             return Toast('error', '인증번호가 일치하지 않습니다');
         }
 
-        // 서버에 보낼 데이터만 필터링
         const {
             name,
             password,
@@ -112,18 +111,8 @@ const useSignup = ({ step, setStep }: UseSignupProps = {}) => {
             userClass,
         };
 
-        console.group('📤 서버 전송 데이터 (authenticationCode 제외)');
-        console.table(payload);
-        console.groupEnd();
-
-        try {
-            await signup(payload);
-            Toast('success', '회원가입 성공');
-            navigate(path.LOGIN);
-        } catch {
-            Toast('error', '정보를 다시 확인해주세요!');
-        }
-    }, [signupData, navigate]);
+        signupQuery.mutate(payload);
+    }, [signupData, signupQuery]);
 
     return {
         signupData,

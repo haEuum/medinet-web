@@ -1,4 +1,4 @@
-import { SignUp } from "@/types/login/auth.type";
+import { SignUp } from "@/types/login/login.type";
 import { isValidEmail, isValidPassword, isValidPhoneNumber } from "@/utils/regex-input";
 
 export const validateSignup = (data: SignUp): string | null => {

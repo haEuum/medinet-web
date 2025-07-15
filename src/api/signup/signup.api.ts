@@ -1,4 +1,4 @@
-import {AuthResponse} from "@/types/login/auth.type";
+import {AuthResponse} from "@/types/login/login.type";
 import axios from "axios";
 import {SignUp} from "@/types/signup/signup.type";
 

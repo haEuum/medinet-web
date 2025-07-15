@@ -1,8 +1,12 @@
 import TextField from "@/components/ui/textfield";
 import useSignup from "@/hooks/auth/useSignup";
 
-const Name = () => {
-    const { signupData, onChange, onKeyDown } = useSignup();
+interface NameProps {
+    onKeyDown: (e: React.KeyboardEvent<HTMLElement>) => void;
+}
+
+const Name = ({ onKeyDown }: NameProps) => {
+    const { signupData, onChange } = useSignup();
 
     return (
         <>

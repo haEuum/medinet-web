@@ -1,4 +1,3 @@
-import {useState} from "react";
 import "./style.scss";
 import TextField from "@/components/ui/textfield";
 import useSignup from "@/hooks/auth/useSignup";
@@ -7,10 +6,11 @@ import Button from "@/components/ui/button";
 interface TelProps {
     inputCode: string;
     setInputCode: React.Dispatch<React.SetStateAction<string>>;
+    onKeyDown: (e: React.KeyboardEvent<HTMLElement>, inputCode?: string) => void;
 }
 
-const Tel = ({inputCode, setInputCode}: TelProps) => {
-    const {signupData, handlePhoneVerification, onChange, handleSignup, onKeyDown} = useSignup();
+const Tel = ({ inputCode, setInputCode, onKeyDown }: TelProps) => {
+    const { signupData, handlePhoneVerification, onChange } = useSignup();
 
     return (
         <>
@@ -22,9 +22,14 @@ const Tel = ({inputCode, setInputCode}: TelProps) => {
                     placeholder="- 없이 입력해주세요."
                     value={signupData.phoneNumber}
                     onChange={onChange}
-                    onKeyDown={onKeyDown}
+                    onKeyDown={(e) => onKeyDown(e)}
                 />
-                <Button text="인증하기" color="Primary" size="Medium" onClick={handlePhoneVerification}/>
+                <Button
+                    text="인증하기"
+                    color="Primary"
+                    size="Medium"
+                    onClick={handlePhoneVerification}
+                />
             </div>
             <TextField
                 label="인증번호"
@@ -33,7 +38,7 @@ const Tel = ({inputCode, setInputCode}: TelProps) => {
                 placeholder="인증번호를 입력해주세요"
                 value={inputCode}
                 onChange={(e) => setInputCode(e.target.value)}
-                onKeyDown={onKeyDown}
+                onKeyDown={(e) => onKeyDown(e, inputCode)}
             />
         </>
     );
