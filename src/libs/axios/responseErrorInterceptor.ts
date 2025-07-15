@@ -1,8 +1,8 @@
 import { AxiosError } from "axios";
 import { Token } from "@/libs/token/session";
-import { ACCESS_TOKEN,REFRESH_TOKEN,REQUEST_TOKEN } from "src/constants/token/token.constants";
+import { ACCESS_TOKEN,REFRESH_TOKEN,REQUEST_TOKEN } from "@/constants/token/token.constants";
 import { MedinetAxios } from "@/libs/axios/customAxios";
-import { refresh } from "@/api/auth.api";
+import { refresh } from "@/api/login/login.api";
 
 let isRefreshing = false;
 

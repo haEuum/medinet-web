@@ -1,37 +1,35 @@
 @use './palette.scss' as *;
 
 :root {
-    // Primary Color Palette
     --Primary-Normal: var(--Blue-20);
-    --Primary-Alternate: #385C7A;
+    --Primary-Alternative: #385C7A;
     --Primary-Assistive: #61778A;
   
-    // Secondary Color Palette
     --Secondary-Normal: #BFC1C1;
     --Secondary-Alternate: #D1D4D5;
     --Secondary-Assistive: #ECF0F1;
   
-    // Label Color Palette
     --Label-Normal: var(--Netural-5);
     --Label-Strong: var(--Common-100);
     --Label-Neutral: var(--Netural-25);
     --Label-Alternate: var(--Netural-40);
     --Label-Assistive: var(--Netural-50);
     --Label-Disabled: var(--Netural-97);
+
+    --Backgroud-Normal: var(--Common-00);
+    --Backgroud-Alternate: var(--Neutral-99);
+    --Backgroud-Neutral: var(--Neutral-95);
   
-    // Line Color Palette
     --Line-Normal: var(--Netural-90);
     --Line-Neutral: var(--Netural-95);
     --Line-Alternate: var(--Netural-97);
   
-    // Fill Color Palette
     --Fill-Assistive: var(--Common-00);
     --Fill-Support: var(--Common-00);
     --Fill-Normal: var(--Netural-97);
     --Fill-Neutral: var(--Netural-95);
     --Fill-Alternate: var(--Netural-90);
   
-    // Normal Color Palette
     --Normal-Normal: var(--Common-00);
     --Normal-Alternate: var(--Netural-99);
     --Normal-Neutral: var(--Netural-95);
@@ -41,7 +39,6 @@
     --Status-Error: var(--Red-50);
     --Status-Info: var(--Blue-50);
   
-    // Static Colors
     --Static-Black: var(--Common-100);
     --Static-White: var(--Common-00);
   }

@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "src/styles/toast/style.scss";
+import "@/styles/toast/style.scss";
 
 const Toast = (type: "success" | "error" | "info" | "warning", message: string) => {
     const progressColorClass = `progress-${type}`;

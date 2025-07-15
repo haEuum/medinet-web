@@ -1,0 +1,53 @@
+@use "@/styles/function/function" as *;
+@use "@/styles/typography/typography" as *;
+
+.auth-page {
+  @include flex-center;
+  background-color: var(--Backgroud-Alternative);
+}
+
+.auth-container {
+  @include flex-center;
+  border-radius: var(--extra-small);
+  box-shadow: var(--black-shadow-3);
+}
+
+.auth-banner {
+  @include flex-center;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    border-bottom-left-radius: var(--extra-small);
+    border-top-left-radius: var(--extra-small);
+  }
+}
+
+.auth-form {
+  @include flex-column;
+  @include flex-center;
+  overflow: hidden;
+  height: 100%;
+  padding: 40px 20px;
+  gap: 30px;
+
+  .auth-input-group {
+    @include flex-column;
+    gap: 10px;
+    width: 100%;
+    min-width: 340px;
+  }
+
+  .redirect {
+    span:nth-child(1) {
+      @include label-medium;
+    }
+
+    span:nth-child(2) {
+      @include label-bold;
+      color: var(--Primary-Alternate);
+      cursor: pointer;
+    }
+  }
+}

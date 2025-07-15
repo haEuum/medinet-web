@@ -17,7 +17,7 @@ const createCustomAxiosInstance = (baseUrl?: AxiosRequestConfig) => {
         ...baseUrl,
         withCredentials: true,
     });
-} ;
+};
 
 export const MedinetAxios = createCustomAxiosInstance({
     baseURL: SERVER_URL,

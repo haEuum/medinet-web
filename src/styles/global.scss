@@ -1,0 +1,12 @@
+@use "./shape/shape" as *;
+@use "./color/semantic" as *;
+@use "./effect/effect" as *;
+@use "./function/function" as *;
+@use "./typography/typography" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
