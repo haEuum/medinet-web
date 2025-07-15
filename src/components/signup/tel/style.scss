@@ -3,4 +3,8 @@
   width: 100%;
   align-items: center;
   gap: 10px;
+
+  input {
+    min-width: 250px;
+  }
 }

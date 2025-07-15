@@ -4,7 +4,7 @@ import {path} from "@/constants/path/path";
 import useSignup from "@/hooks/auth/useSignup";
 import Logo from "@/assets/logo.svg";
 import SignupBanner from "@/assets/signupBanner.svg";
-import Button from "@/components/common/button/index";
+import Button from "@/components/ui/button";
 import Name from "@/components/signup/name";
 import Tel from "@/components/signup/tel";
 import Work from "@/components/signup/work";
@@ -14,7 +14,8 @@ import "./style.scss";
 const Signup = () => {
     const navigate = useNavigate();
     const [step, setStep] = useState<number>(1);
-    const {handleSignup} = useSignup();
+    const [inputCode, setInputCode] = useState<string>("");
+    const {handleSignup, validateStep, onKeyDown} = useSignup({step, setStep});
 
     const handleLoginRedirect = () => {
         navigate(path.LOGIN);
@@ -22,9 +23,11 @@ const Signup = () => {
 
     const handleNextStep = () => {
         if (step < 3) {
+            const isValid = validateStep();
+            if (!isValid) return;
             setStep(step + 1);
         } else {
-            handleSignup();
+            handleSignup(inputCode);
         }
     };
 
@@ -41,11 +44,13 @@ const Signup = () => {
                     <ProgressBar step={step}/>
                     <div className="auth-input-group">
                         {step === 1 && <Name/>}
-                        {step === 2 && <Tel/>}
-                        {step === 3 && <Work/>}
+                        {step === 2 && <Tel inputCode={inputCode} setInputCode={setInputCode}/>}
+                        {step === 3 && <Work onKeyDown={onKeyDown}/>}
                     </div>
                     <Button
                         text={step < 3 ? "다음" : "가입하기"}
+                        color="Primary"
+                        size="Large"
                         onClick={handleNextStep}
                     />
                     <div className="redirect">

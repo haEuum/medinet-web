@@ -1,61 +1,54 @@
-import { useState } from "react";
-import { fieldOptions } from "@/types/field/fieldoptions";
-import "./style.scss";
+import { useMemo } from "react";
+import Select from "@/components/ui/select";
+import useSignup from "@/hooks/auth/useSignup";
+import { fieldOptions, fieldToEnumMap } from "@/constants/field/field.constants";
+import { SelectProps } from "@/types/ui/select/select.type";
 
-const Work = () => {
-  const [selectedField, setSelectedField] = useState("");
+const Work = ({ onKeyDown }: SelectProps) => {
+    const { signupData, onChange } = useSignup();
 
-  const handleFieldChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedField(e.target.value);
-  };
+    const userClassOptions = useMemo(() => {
+        if (!signupData.field) return [];
 
-  const currentField = fieldOptions.find((f) => f.value === selectedField);
+        const enumObj = fieldToEnumMap[signupData.field as keyof typeof fieldToEnumMap];
+        return Object.entries(enumObj).map(([key, value]) => ({
+            label: value,
+            value: key,
+        }));
+    }, [signupData.field]);
 
-  return (
-      <>
-        <div className="form-group">
-          <label className="form-label" htmlFor="field">
-            직군
-          </label>
-          <select
-            id="field"
-            name="field"
-            className="signup-select"
-            value={selectedField}
-            onChange={ handleFieldChange }
-          >
-            <option value="">직군을 선택해주세요</option>
-            {fieldOptions.map((field) => (
-              <option key={field.value} value={field.value}>
-                {field.label}
-              </option>
-            ))}
-          </select>
-        </div>
+    return (
+        <>
+            <Select
+                label="직군"
+                name="field"
+                value={signupData.field}
+                onChange={onChange}
+                options={[
+                    { label: "직군을 선택해주세요", value: "" },
+                    ...fieldOptions.map(({ label, value }) => ({ label, value })),
+                ]}
+                onKeyDown={onKeyDown}
+            />
 
-        <div className="form-group">
-          <label className="form-label" htmlFor="userClass">
-            소속
-          </label>
-          <select
-            id="userClass"
-            name="userClass"
-            className="signup-select"
-            disabled={!selectedField}
-          >
-            {!selectedField ? (
-              <option value="">먼저 직군을 선택해주세요</option>
-            ) : (
-              currentField?.userClasses.map((uc) => (
-                <option key={uc} value={uc}>
-                  {uc}
-                </option>
-              ))
-            )}
-          </select>
-        </div>
-      </>
-  );
+            <Select
+                label="소속"
+                name="userClass"
+                value={signupData.userClass}
+                onChange={onChange}
+                disabled={!signupData.field}
+                options={
+                    !signupData.field
+                        ? [{ label: "먼저 직군을 선택해주세요", value: "" }]
+                        : [
+                            { label: "소속을 선택해주세요", value: "" },
+                            ...userClassOptions,
+                        ]
+                }
+                onKeyDown={onKeyDown}
+            />
+        </>
+    );
 };
 
 export default Work;

@@ -12,6 +12,7 @@ const TextField = ({
                        onChange,
                        showClear = false,
                        onClear,
+                        onKeyDown,
                    }: TextFieldProps) => {
     return (
         <div className={styles["text-field"]}>
@@ -28,6 +29,7 @@ const TextField = ({
                     value={value}
                     onChange={onChange}
                     className={styles["text-field-input"]}
+                    onKeyDown={onKeyDown}
                 />
                 {showClear && value && (
                     <button
