@@ -25,11 +25,11 @@ const Login = () => {
                     <img src={Logo} alt="logo"/>
                     <div className="auth-input-group">
                         <TextField
-                            label="이름"
-                            type="name"
-                            name="name"
-                            placeholder="이름을 입력해주세요"
-                            value={loginData.name}
+                            label="전화번호"
+                            type="text"
+                            name="phoneNumber"
+                            placeholder="전화번호를 입력해주세요"
+                            value={loginData.phoneNumber}
                             onChange={onChange}
                         />
                         <TextField

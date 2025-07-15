@@ -1,5 +1,5 @@
 import axios from "axios";
-import {Login, AuthResponse, NewAccessToken} from "@/types/login/auth.type";
+import {Login, AuthResponse, NewAccessToken} from "@/types/login/login.type";
 
 const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
