@@ -1,0 +1,116 @@
+@use "@/styles/function/function" as *;
+@use "@/styles/typography/typography" as *;
+
+.sidebar {
+  @include flex-column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+  gap: 30px 10px;
+  padding: 30px 10px;
+  background-color: var(--Fill-Assistive);
+
+  .patient_list {
+    @include flex-column;
+    width: 100%;
+    gap: 10px;
+    padding: 5px 0;
+
+    span {
+      @include caption-medium;
+      color: var(--Label-Assistive);
+    }
+  }
+}
+
+.logo {
+  @include flex-center;
+  width: 100%;
+  padding: 20px;
+}
+
+.sidebar_item {
+  width: 100%;
+  position: relative;
+  @include flex-column;
+  justify-content: flex-start;
+  gap: 15px;
+  padding: 0 5px;
+
+  .active-indicator {
+    width: calc(100% - 12px);
+    position: absolute;
+    height: 40px;
+    background-color: var(--Primary-Normal);
+    border-radius: var(--extra-small);
+    transition: transform 0.25s ease-in-out;
+    z-index: 0;
+  }
+
+  .sidebar_section {
+    width: 100%;
+    @include flex-column;
+    gap: 10px;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--Line-Neutral);
+    border-radius: var(--extra-small);
+  }
+
+  .label {
+    @include caption-medium;
+    color: var(--Label-Assistive);
+  }
+
+  .menu {
+    position: relative;
+    z-index: 1;
+    color: var(--Label-Normal);
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+    padding: 0 12px;
+    cursor: pointer;
+
+    span {
+      @include body-medium;
+    }
+
+    &.active {
+      color: var(--Label-Disabled);
+    }
+  }
+}
+
+.setting {
+  @include flex-column;
+  width: 100%;
+  padding: 10px;
+  gap: 15px;
+
+  .setting_item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    padding: 0 10px;
+
+    span {
+      @include label-medium;
+    }
+  }
+
+  .set {
+    color: var(--Label-Normal);
+  }
+
+  .logout {
+    color: var(--Status-Error);
+  }
+}
