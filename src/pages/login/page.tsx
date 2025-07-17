@@ -2,8 +2,8 @@ import {useNavigate} from "react-router-dom";
 import {path} from "@/constants/path/path";
 import useLogin from "@/hooks/auth/useLogin";
 import Button from "@/components/ui/button";
-import LoginBanner from "@/assets/loginBanner.svg";
-import Logo from "@/assets/logo.svg";
+import LoginBanner from "@/assets/auth/loginBanner.svg";
+import Logo from "@/assets/logo/logo.svg";
 import TextField from "@/components/ui/textfield/index";
 import "./style.scss";
 
