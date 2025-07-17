@@ -17,7 +17,10 @@ const Router = () => {
                 <Route path={path.LOGIN} element={<Login/>}/>
                 <Route path={path.SIGNUP} element={<Signup/>}/>
                 <Route path={path.HOME} element={
-                    <PageTemplate/>}>
+                    <RequireAuth>
+                        <PageTemplate/>
+                    </RequireAuth>
+                }>
                     <Route index element={<Home/>}/>
                     <Route path={path.PATIENT_LIST} element={<PatientList/>}/>
                     <Route path={path.REQUEST_PATIENT} element={<PatientRequest/>}/>
