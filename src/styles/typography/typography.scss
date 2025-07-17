@@ -22,188 +22,161 @@
 @mixin display1-bold {
   font-size: 36px;
   font-weight: 700;
-  line-height: 46.8px;
   letter-spacing: 0;
 }
 
 @mixin display1-medium {
   font-size: 36px;
   font-weight: 500;
-  line-height: 46.8px;
   letter-spacing: 0;
 }
 
 @mixin display1-regular {
   font-size: 36px;
   font-weight: 400;
-  line-height: 46.8px;
   letter-spacing: 0;
 }
 
 @mixin display2-bold {
   font-size: 32px;
   font-weight: 700;
-  line-height: 41.6px;
   letter-spacing: 0;
 }
 
 @mixin display2-medium {
   font-size: 32px;
   font-weight: 500;
-  line-height: 41.6px;
   letter-spacing: 0;
 }
 
 @mixin display2-regular {
   font-size: 32px;
   font-weight: 400;
-  line-height: 41.6px;
   letter-spacing: 0;
 }
 
 @mixin title1-bold {
   font-size: 28px;
   font-weight: 700;
-  line-height: 36.4px;
   letter-spacing: 0;
 }
 
 @mixin title1-medium {
   font-size: 28px;
   font-weight: 500;
-  line-height: 36.4px;
   letter-spacing: 0;
 }
 
 @mixin title1-regular {
   font-size: 28px;
   font-weight: 400;
-  line-height: 36.4px;
   letter-spacing: 0;
 }
 
 @mixin title2-bold {
   font-size: 24px;
   font-weight: 700;
-  line-height: 31.2px;
   letter-spacing: 0;
 }
 
 @mixin title2-medium {
   font-size: 24px;
   font-weight: 500;
-  line-height: 31.2px;
   letter-spacing: 0;
 }
 
 @mixin title2-regular {
   font-size: 24px;
   font-weight: 400;
-  line-height: 31.2px;
   letter-spacing: 0;
 }
 
 @mixin headline1-bold {
   font-size: 20px;
   font-weight: 700;
-  line-height: 26px;
   letter-spacing: 0;
 }
 
 @mixin headline1-medium {
   font-size: 20px;
   font-weight: 500;
-  line-height: 26px;
   letter-spacing: 0;
 }
 
 @mixin headline1-regular {
   font-size: 20px;
   font-weight: 400;
-  line-height: 26px;
   letter-spacing: 0;
 }
 
 @mixin headline2-bold {
   font-size: 18px;
   font-weight: 700;
-  line-height: 23.4px;
   letter-spacing: 0;
 }
 
 @mixin headline2-medium {
   font-size: 18px;
   font-weight: 500;
-  line-height: 23.4px;
   letter-spacing: 0;
 }
 
 @mixin headline2-regular {
   font-size: 18px;
   font-weight: 400;
-  line-height: 23.4px;
   letter-spacing: 0;
 }
 
 @mixin body-bold {
   font-size: 16px;
   font-weight: 700;
-  line-height: 20.8px;
   letter-spacing: 0;
 }
 
 @mixin body-medium {
   font-size: 16px;
   font-weight: 500;
-  line-height: 20.8px;
   letter-spacing: 0;
 }
 
 @mixin body-regular {
   font-size: 16px;
   font-weight: 400;
-  line-height: 20.8px;
   letter-spacing: 0;
 }
 
 @mixin label-bold {
   font-size: 14px;
   font-weight: 700;
-  line-height: 18.2px;
   letter-spacing: 0;
 }
 
 @mixin label-medium {
   font-size: 14px;
   font-weight: 500;
-  line-height: 18.2px;
   letter-spacing: 0;
 }
 
 @mixin label-regular {
   font-size: 14px;
   font-weight: 400;
-  line-height: 18.2px;
   letter-spacing: 0;
 }
 
 @mixin caption-bold {
   font-size: 12px;
   font-weight: 700;
-  line-height: 15.6px;
   letter-spacing: 0;
 }
 
 @mixin caption-medium {
   font-size: 12px;
   font-weight: 500;
-  line-height: 15.6px;
   letter-spacing: 0;
 }
 
 @mixin caption-regular {
   font-size: 12px;
   font-weight: 400;
-  line-height: 15.6px;
   letter-spacing: 0;
 }
